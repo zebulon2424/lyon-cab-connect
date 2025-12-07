@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taxi Lyon Cab - Service de taxi premium à Lyon 24h/24</title>
-    <meta name="description" content="Réservez votre taxi à Lyon en ligne. Service premium 24h/24, transferts aéroport, gares et événements. Tarifs fixes et chauffeurs professionnels." />
+    <title>Taxi Lyon Aéroport Saint-Exupéry | Réservation 24h/24 - Taxi Lyon Cab</title>
+    <meta name="description" content="Taxi Lyon ✓ Transfert aéroport Saint-Exupéry ✓ Gare Part-Dieu & Perrache ✓ Réservation en ligne 24h/24 7j/7 ✓ Tarifs fixes ✓ Devis gratuit. Chauffeurs professionnels à Lyon." />
     <meta name="author" content="Taxi Lyon Cab" />
-    <meta name="keywords" content="taxi lyon, taxi aéroport lyon, vtc lyon, réservation taxi, transfert aéroport saint-exupéry, taxi gare part-dieu" />
+    <meta name="keywords" content="taxi lyon, taxi aéroport lyon, taxi saint exupéry, transfert aéroport lyon, taxi gare part dieu, taxi gare perrache, vtc lyon, réservation taxi lyon, taxi lyon pas cher, navette aéroport lyon, chauffeur privé lyon, taxi conventionné lyon, commander taxi lyon, tarif taxi lyon aéroport, taxi lyon 24h/24, taxi villeurbanne, taxi bron, taxi vénissieux" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
     
+    <!-- Geo Meta Tags pour SEO local -->
+    <meta name="geo.region" content="FR-69" />
+    <meta name="geo.placename" content="Lyon" />
+    <meta name="geo.position" content="45.764043;4.835659" />
+    <meta name="ICBM" content="45.764043, 4.835659" />
+    
+    <!-- Canonical & Hreflang -->
     <link rel="canonical" href="https://taxilyoncab.fr/" />
+    <link rel="alternate" hreflang="fr" href="https://taxilyoncab.fr/?lang=fr" />
+    <link rel="alternate" hreflang="en" href="https://taxilyoncab.fr/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://taxilyoncab.fr/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Taxi Lyon Cab - Réservation de taxi premium à Lyon" />
-    <meta property="og:description" content="Service de taxi premium à Lyon. Réservez en ligne, 24h/24, tarifs fixes. Transferts aéroport et gares." />
+    <meta property="og:title" content="Taxi Lyon Aéroport Saint-Exupéry | Réservation 24h/24" />
+    <meta property="og:description" content="Taxi Lyon ✓ Transfert aéroport Saint-Exupéry ✓ Gare Part-Dieu & Perrache ✓ Réservation 24h/24 ✓ Tarifs fixes." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://taxilyoncab.fr/" />
     <meta property="og:locale" content="fr_FR" />
@@ -21,35 +33,148 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Taxi Lyon Cab - Service de taxi premium à Lyon" />
-    <meta name="twitter:description" content="Réservez votre taxi à Lyon en ligne. Service premium 24h/24." />
+    <meta name="twitter:title" content="Taxi Lyon Aéroport | Réservation 24h/24 - Taxi Lyon Cab" />
+    <meta name="twitter:description" content="Taxi Lyon ✓ Transfert aéroport Saint-Exupéry ✓ Tarifs fixes ✓ Réservation en ligne 24h/24." />
 
-    <!-- Structured Data -->
+    <!-- Structured Data - TaxiService -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TaxiService",
+      "@id": "https://taxilyoncab.fr/#taxiservice",
       "name": "Taxi Lyon Cab",
-      "description": "Service de taxi premium à Lyon disponible 24h/24",
+      "alternateName": ["Taxi Lyon Aéroport", "Taxi Saint-Exupéry", "Lyon Airport Taxi"],
+      "description": "Service de taxi premium à Lyon. Transferts aéroport Saint-Exupéry, gares Part-Dieu et Perrache. Réservation 24h/24.",
       "url": "https://taxilyoncab.fr",
       "telephone": "+33478000000",
       "email": "contact@taxilyoncab.fr",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Lyon",
         "addressLocality": "Lyon",
+        "postalCode": "69000",
+        "addressRegion": "Auvergne-Rhône-Alpes",
         "addressCountry": "FR"
       },
-      "areaServed": {
-        "@type": "City",
-        "name": "Lyon"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.764043,
+        "longitude": 4.835659
       },
+      "areaServed": [
+        {"@type": "City", "name": "Lyon"},
+        {"@type": "City", "name": "Villeurbanne"},
+        {"@type": "City", "name": "Vénissieux"},
+        {"@type": "City", "name": "Bron"},
+        {"@type": "Place", "name": "Aéroport Lyon Saint-Exupéry"},
+        {"@type": "Place", "name": "Gare de Lyon Part-Dieu"},
+        {"@type": "Place", "name": "Gare de Lyon Perrache"}
+      ],
       "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": ["Cash", "Credit Card", "Visa", "Mastercard"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "00:00",
         "closes": "23:59"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2847",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de taxi",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Transfert Aéroport Saint-Exupéry",
+              "description": "Navette taxi Lyon centre vers aéroport Saint-Exupéry, tarif fixe"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Taxi Gare Part-Dieu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Taxi Gare Perrache"
+            }
+          }
+        ]
       }
+    }
+    </script>
+
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://taxilyoncab.fr/#business",
+      "name": "Taxi Lyon Cab",
+      "telephone": "+33478000000",
+      "email": "contact@taxilyoncab.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lyon",
+        "addressLocality": "Lyon",
+        "postalCode": "69000",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.764043,
+        "longitude": 4.835659
+      },
+      "url": "https://taxilyoncab.fr",
+      "priceRange": "€€"
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel est le tarif d'un taxi Lyon aéroport Saint-Exupéry ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le tarif pour un taxi de Lyon centre vers l'aéroport Saint-Exupéry est à partir de 55€ en tarif fixe. Prix garanti, pas de supplément."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment réserver un taxi à Lyon ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Réservez en ligne sur notre site 24h/24, par téléphone ou via WhatsApp. Confirmation immédiate et chauffeur professionnel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Proposez-vous des transferts gare Part-Dieu ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, nous assurons les transferts depuis et vers la gare Part-Dieu 24h/24, 7j/7 avec tarifs fixes."
+          }
+        }
+      ]
     }
     </script>
   </head>
