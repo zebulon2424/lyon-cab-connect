@@ -72,8 +72,8 @@ const resources = {
         wheelchairRamp: "Fauteuil non pliable / électrique - Véhicule avec rampe",
         // VSL
         vslInfo: "Transport pris en charge par la Sécurité Sociale",
-        vslPaymentTitle: "Pas de paiement à bord",
-        vslPaymentDesc: "Ce transport est conventionné CPAM. Munissez-vous de votre bon de transport délivré par votre médecin. La prise en charge est directe, aucun paiement n'est requis.",
+        vslPaymentTitle: "Prise en charge Sécurité Sociale",
+        vslPaymentDesc: "Ce transport est conventionné CPAM. Munissez-vous de votre bon de transport délivré par votre médecin. Si vous n'êtes pas pris en charge à 100%, un petit complément sera à régler en fonction de votre taux de prise en charge.",
         vslCovered: "Pris en charge",
         // Child seat
         childSeat: "Siège enfant",
@@ -250,8 +250,8 @@ const resources = {
         wheelchairRamp: "Non-foldable / Electric wheelchair - Vehicle with ramp",
         // VSL
         vslInfo: "Transport covered by French Social Security",
-        vslPaymentTitle: "No payment on board",
-        vslPaymentDesc: "This transport is covered by CPAM. Bring your transport voucher issued by your doctor. Coverage is direct, no payment is required.",
+        vslPaymentTitle: "Social Security Coverage",
+        vslPaymentDesc: "This transport is covered by CPAM. Bring your transport voucher issued by your doctor. If you are not covered at 100%, a small additional payment will be required based on your coverage rate.",
         vslCovered: "Covered",
         // Child seat
         childSeat: "Child seat",
