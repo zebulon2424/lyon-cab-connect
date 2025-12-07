@@ -65,8 +65,8 @@ const MentionsLegales = () => {
             </h2>
             <p className="text-muted-foreground">
               {isFr 
-                ? 'Taxi Lyon Cab est titulaire d\'une licence de taxi délivrée par la Préfecture du Rhône. Numéro de licence : [À compléter]. Nous sommes également conventionnés par la CPAM pour les transports VSL.'
-                : 'Taxi Lyon Cab holds a taxi license issued by the Rhône Prefecture. License number: [To be completed]. We are also approved by CPAM for VSL transport.'}
+                ? 'Taxi Lyon Cab est titulaire d\'une licence de taxi délivrée par la Préfecture du Rhône. Numéro de licence : LYON 69. Nous sommes également conventionnés par la CPAM pour les transports VSL.'
+                : 'Taxi Lyon Cab holds a taxi license issued by the Rhône Prefecture. License number: LYON 69. We are also approved by CPAM for VSL transport.'}
             </p>
           </section>
 
@@ -87,8 +87,8 @@ const MentionsLegales = () => {
             </h2>
             <p className="text-muted-foreground">
               {isFr 
-                ? 'Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à l\'adresse suivante : contact@taxilyoncab.fr'
-                : 'For any questions regarding these legal notices, you can contact us at: contact@taxilyoncab.fr'}
+                ? 'Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à l\'adresse suivante : contact@taxilyon.cab'
+                : 'For any questions regarding these legal notices, you can contact us at: contact@taxilyon.cab'}
             </p>
           </section>
         </div>
