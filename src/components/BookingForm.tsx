@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Clock, Users, Briefcase, CreditCard, Banknote, Phone, Mail, User } from 'lucide-react';
+import { MapPin, Calendar, Clock, Users, Briefcase, CreditCard, Banknote, Phone, Mail, User, Car, Bus, Accessibility, Baby, FileText, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+
+type VehicleType = 'sedan' | 'minivan' | 'bus' | 'tpmr' | 'vsl';
+type WheelchairType = 'foldable' | 'ramp';
+type ChildSeatType = 'none' | 'baby' | 'child' | 'booster';
 
 const BookingForm = () => {
   const { t } = useTranslation();
@@ -15,6 +19,10 @@ const BookingForm = () => {
     time: '',
     passengers: '1',
     luggage: '0',
+    vehicleType: 'sedan' as VehicleType,
+    wheelchairType: 'foldable' as WheelchairType,
+    childSeat: 'none' as ChildSeatType,
+    childAge: '',
     payment: 'online',
     name: '',
     phone: '',
@@ -23,20 +31,60 @@ const BookingForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here we would integrate with the backend
-    toast.success('Réservation envoyée ! Nous vous contacterons sous peu.');
+    
+    if (formData.vehicleType === 'bus') {
+      toast.info(t('booking.busCallMessage'));
+      return;
+    }
+    
+    toast.success(t('booking.successMessage'));
     console.log('Booking data:', formData);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: value,
+      // Reset wheelchair type when not TPMR
+      ...(name === 'vehicleType' && value !== 'tpmr' ? { wheelchairType: 'foldable' } : {}),
+      // Reset child seat when changing
+      ...(name === 'childSeat' && value === 'none' ? { childAge: '' } : {}),
+    }));
   };
+
+  const vehicleTypes = [
+    { value: 'sedan', label: t('booking.vehicleSedanLabel'), icon: Car, maxPassengers: 4 },
+    { value: 'minivan', label: t('booking.vehicleMinivanLabel'), icon: Car, maxPassengers: 8 },
+    { value: 'bus', label: t('booking.vehicleBusLabel'), icon: Bus, maxPassengers: 19 },
+    { value: 'tpmr', label: t('booking.vehicleTPMRLabel'), icon: Accessibility, maxPassengers: 4 },
+    { value: 'vsl', label: t('booking.vehicleVSLLabel'), icon: FileText, maxPassengers: 4 },
+  ];
+
+  const wheelchairTypes = [
+    { value: 'foldable', label: t('booking.wheelchairFoldable') },
+    { value: 'ramp', label: t('booking.wheelchairRamp') },
+  ];
+
+  const childSeatOptions = [
+    { value: 'none', label: t('booking.childSeatNone') },
+    { value: 'baby', label: t('booking.childSeatBaby') },
+    { value: 'child', label: t('booking.childSeatChild') },
+    { value: 'booster', label: t('booking.childSeatBooster') },
+  ];
 
   const paymentMethods = [
     { value: 'online', label: t('booking.paymentOnline'), icon: CreditCard },
     { value: 'cash', label: t('booking.paymentCash'), icon: Banknote },
     { value: 'card', label: t('booking.paymentCard'), icon: CreditCard },
   ];
+
+  const currentVehicle = vehicleTypes.find(v => v.value === formData.vehicleType);
+  const maxPassengers = currentVehicle?.maxPassengers || 4;
+  const showWheelchairOptions = formData.vehicleType === 'tpmr';
+  const showChildSeatAge = formData.childSeat !== 'none';
+  const isBus = formData.vehicleType === 'bus';
+  const isVSL = formData.vehicleType === 'vsl';
 
   return (
     <section id="booking" className="py-20 relative">
@@ -63,6 +111,91 @@ const BookingForm = () => {
           className="max-w-4xl mx-auto"
         >
           <form onSubmit={handleSubmit} className="glass rounded-3xl p-6 md:p-10 border border-border/50">
+            {/* Vehicle Type Selection */}
+            <div className="mb-8">
+              <label className="text-sm font-medium text-foreground mb-4 block">
+                {t('booking.vehicleType')}
+              </label>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                {vehicleTypes.map((vehicle) => (
+                  <label
+                    key={vehicle.value}
+                    className={`flex flex-col items-center gap-2 p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
+                      formData.vehicleType === vehicle.value
+                        ? 'border-primary bg-primary/10'
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="vehicleType"
+                      value={vehicle.value}
+                      checked={formData.vehicleType === vehicle.value}
+                      onChange={handleChange}
+                      className="sr-only"
+                    />
+                    <vehicle.icon className={`w-6 h-6 ${formData.vehicleType === vehicle.value ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <span className={`text-xs text-center ${formData.vehicleType === vehicle.value ? 'text-primary font-medium' : 'text-foreground'}`}>
+                      {vehicle.label}
+                    </span>
+                  </label>
+                ))}
+              </div>
+
+              {/* Vehicle Description */}
+              <div className="mt-4 p-4 rounded-xl bg-surface/50 border border-border/30">
+                <p className="text-sm text-muted-foreground">
+                  {t(`booking.vehicleDesc_${formData.vehicleType}`)}
+                </p>
+                {isBus && (
+                  <div className="mt-3 flex items-center gap-2 text-primary">
+                    <AlertCircle className="w-4 h-4" />
+                    <span className="text-sm font-medium">{t('booking.busCallWarning')}</span>
+                  </div>
+                )}
+                {isVSL && (
+                  <div className="mt-3 flex items-center gap-2 text-primary">
+                    <FileText className="w-4 h-4" />
+                    <span className="text-sm font-medium">{t('booking.vslInfo')}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* TPMR Wheelchair Options */}
+            {showWheelchairOptions && (
+              <div className="mb-8">
+                <label className="text-sm font-medium text-foreground mb-4 block">
+                  {t('booking.wheelchairType')}
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {wheelchairTypes.map((type) => (
+                    <label
+                      key={type.value}
+                      className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
+                        formData.wheelchairType === type.value
+                          ? 'border-primary bg-primary/10'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="wheelchairType"
+                        value={type.value}
+                        checked={formData.wheelchairType === type.value}
+                        onChange={handleChange}
+                        className="sr-only"
+                      />
+                      <Accessibility className={`w-5 h-5 ${formData.wheelchairType === type.value ? 'text-primary' : 'text-muted-foreground'}`} />
+                      <span className={formData.wheelchairType === type.value ? 'text-primary font-medium' : 'text-foreground'}>
+                        {type.label}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 gap-6">
               {/* Pickup */}
               <div className="space-y-2">
@@ -136,7 +269,7 @@ const BookingForm = () => {
                   onChange={handleChange}
                   className="flex h-12 w-full rounded-lg border border-border bg-input px-4 py-3 text-base text-foreground transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
-                  {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+                  {Array.from({ length: maxPassengers }, (_, i) => i + 1).map((num) => (
                     <option key={num} value={num}>
                       {num} {num === 1 ? t('booking.passenger') : t('booking.passengers_plural')}
                     </option>
@@ -163,6 +296,43 @@ const BookingForm = () => {
                   ))}
                 </select>
               </div>
+
+              {/* Child Seat */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Baby className="w-4 h-4 text-primary" />
+                  {t('booking.childSeat')}
+                </label>
+                <select
+                  name="childSeat"
+                  value={formData.childSeat}
+                  onChange={handleChange}
+                  className="flex h-12 w-full rounded-lg border border-border bg-input px-4 py-3 text-base text-foreground transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  {childSeatOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Child Age - shown when child seat is selected */}
+              {showChildSeatAge && (
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <Baby className="w-4 h-4 text-primary" />
+                    {t('booking.childAge')}
+                  </label>
+                  <Input
+                    name="childAge"
+                    value={formData.childAge}
+                    onChange={handleChange}
+                    placeholder={t('booking.childAgePlaceholder')}
+                    required
+                  />
+                </div>
+              )}
 
               {/* Name */}
               <div className="space-y-2">
@@ -211,48 +381,82 @@ const BookingForm = () => {
                 />
               </div>
 
-              {/* Payment Method */}
-              <div className="space-y-3 md:col-span-2">
-                <label className="text-sm font-medium text-foreground">
-                  {t('booking.payment')}
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {paymentMethods.map((method) => (
-                    <label
-                      key={method.value}
-                      className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
-                        formData.payment === method.value
-                          ? 'border-primary bg-primary/10'
-                          : 'border-border hover:border-primary/50'
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="payment"
-                        value={method.value}
-                        checked={formData.payment === method.value}
-                        onChange={handleChange}
-                        className="sr-only"
-                      />
-                      <method.icon className={`w-5 h-5 ${formData.payment === method.value ? 'text-primary' : 'text-muted-foreground'}`} />
-                      <span className={formData.payment === method.value ? 'text-primary font-medium' : 'text-foreground'}>
-                        {method.label}
-                      </span>
-                    </label>
-                  ))}
+              {/* Payment Method - Hidden for VSL */}
+              {!isVSL && !isBus && (
+                <div className="space-y-3 md:col-span-2">
+                  <label className="text-sm font-medium text-foreground">
+                    {t('booking.payment')}
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {paymentMethods.map((method) => (
+                      <label
+                        key={method.value}
+                        className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
+                          formData.payment === method.value
+                            ? 'border-primary bg-primary/10'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="payment"
+                          value={method.value}
+                          checked={formData.payment === method.value}
+                          onChange={handleChange}
+                          className="sr-only"
+                        />
+                        <method.icon className={`w-5 h-5 ${formData.payment === method.value ? 'text-primary' : 'text-muted-foreground'}`} />
+                        <span className={formData.payment === method.value ? 'text-primary font-medium' : 'text-foreground'}>
+                          {method.label}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {/* VSL Info */}
+              {isVSL && (
+                <div className="md:col-span-2 p-4 rounded-xl bg-primary/10 border border-primary/30">
+                  <div className="flex items-start gap-3">
+                    <FileText className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-foreground">{t('booking.vslPaymentTitle')}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{t('booking.vslPaymentDesc')}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Submit */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-center sm:text-left">
-                <p className="text-sm text-muted-foreground">{t('booking.estimatedPrice')}</p>
-                <p className="text-3xl font-bold text-gradient">~35€</p>
-              </div>
-              <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
-                {t('booking.submit')}
-              </Button>
+              {!isBus && (
+                <div className="text-center sm:text-left">
+                  <p className="text-sm text-muted-foreground">{t('booking.estimatedPrice')}</p>
+                  <p className="text-3xl font-bold text-gradient">
+                    {isVSL ? t('booking.vslCovered') : '~35€'}
+                  </p>
+                </div>
+              )}
+              {isBus ? (
+                <div className="w-full flex flex-col sm:flex-row items-center gap-4">
+                  <div className="text-center sm:text-left flex-1">
+                    <p className="text-sm text-muted-foreground">{t('booking.busQuote')}</p>
+                    <p className="text-xl font-bold text-primary">{t('booking.busCallUs')}</p>
+                  </div>
+                  <a href="tel:+33472000000" className="w-full sm:w-auto">
+                    <Button type="button" variant="hero" size="xl" className="w-full">
+                      <Phone className="w-5 h-5 mr-2" />
+                      {t('booking.callForQuote')}
+                    </Button>
+                  </a>
+                </div>
+              ) : (
+                <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
+                  {t('booking.submit')}
+                </Button>
+              )}
             </div>
           </form>
         </motion.div>

@@ -48,6 +48,41 @@ const resources = {
         namePlaceholder: "Jean Dupont",
         submit: "Confirmer la réservation",
         estimatedPrice: "Prix estimé",
+        successMessage: "Réservation envoyée ! Nous vous contacterons sous peu.",
+        // Vehicle types
+        vehicleType: "Type de véhicule",
+        vehicleSedanLabel: "Berline",
+        vehicleMinivanLabel: "Minivan",
+        vehicleBusLabel: "Bus",
+        vehicleTPMRLabel: "TPMR",
+        vehicleVSLLabel: "VSL Médical",
+        vehicleDesc_sedan: "Berline confortable pour 1 à 3 passagers (maximum 4 sans grosse valise). Idéal pour les trajets quotidiens et professionnels.",
+        vehicleDesc_minivan: "Minivan spacieux pour 7 à 8 passagers maximum. Parfait pour les groupes et les familles avec bagages.",
+        vehicleDesc_bus: "Bus pour groupes jusqu'à 19 passagers. Idéal pour les événements, séminaires et transferts de groupe.",
+        vehicleDesc_tpmr: "Véhicule adapté aux Personnes à Mobilité Réduite. Équipé pour le transport de personnes en fauteuil roulant.",
+        vehicleDesc_vsl: "Véhicule Sanitaire Léger conventionné CPAM. Transport médical avec bon de transport de la Sécurité Sociale.",
+        busCallWarning: "Tarif sur demande - Veuillez nous appeler pour un devis personnalisé",
+        busCallMessage: "Pour les réservations de bus, veuillez nous appeler directement.",
+        busQuote: "Tarif sur demande",
+        busCallUs: "Appelez-nous pour un devis",
+        callForQuote: "Appeler pour devis",
+        // TPMR options
+        wheelchairType: "Type de fauteuil roulant",
+        wheelchairFoldable: "Fauteuil pliable - Véhicule classique",
+        wheelchairRamp: "Fauteuil non pliable / électrique - Véhicule avec rampe",
+        // VSL
+        vslInfo: "Transport pris en charge par la Sécurité Sociale",
+        vslPaymentTitle: "Pas de paiement à bord",
+        vslPaymentDesc: "Ce transport est conventionné CPAM. Munissez-vous de votre bon de transport délivré par votre médecin. La prise en charge est directe, aucun paiement n'est requis.",
+        vslCovered: "Pris en charge",
+        // Child seat
+        childSeat: "Siège enfant",
+        childSeatNone: "Pas de siège enfant",
+        childSeatBaby: "Siège bébé (0-12 mois)",
+        childSeatChild: "Siège enfant (1-4 ans)",
+        childSeatBooster: "Réhausseur (4-10 ans)",
+        childAge: "Âge de l'enfant",
+        childAgePlaceholder: "Ex: 3 ans",
       },
       // Services
       services: {
@@ -75,7 +110,7 @@ const resources = {
         },
         medical: {
           title: "Transport médical",
-          description: "Accompagnement vers vos rendez-vous médicaux en toute discrétion.",
+          description: "VSL conventionné CPAM et TPMR pour personnes à mobilité réduite.",
         },
       },
       // Pricing
@@ -191,6 +226,41 @@ const resources = {
         namePlaceholder: "John Doe",
         submit: "Confirm booking",
         estimatedPrice: "Estimated price",
+        successMessage: "Booking sent! We will contact you shortly.",
+        // Vehicle types
+        vehicleType: "Vehicle type",
+        vehicleSedanLabel: "Sedan",
+        vehicleMinivanLabel: "Minivan",
+        vehicleBusLabel: "Bus",
+        vehicleTPMRLabel: "Wheelchair",
+        vehicleVSLLabel: "Medical VSL",
+        vehicleDesc_sedan: "Comfortable sedan for 1 to 3 passengers (maximum 4 without large luggage). Ideal for daily and business trips.",
+        vehicleDesc_minivan: "Spacious minivan for up to 7-8 passengers. Perfect for groups and families with luggage.",
+        vehicleDesc_bus: "Bus for groups up to 19 passengers. Ideal for events, seminars and group transfers.",
+        vehicleDesc_tpmr: "Vehicle adapted for People with Reduced Mobility. Equipped for wheelchair transport.",
+        vehicleDesc_vsl: "Light Medical Vehicle covered by French Social Security. Medical transport with official transport voucher.",
+        busCallWarning: "Price on request - Please call us for a custom quote",
+        busCallMessage: "For bus reservations, please call us directly.",
+        busQuote: "Price on request",
+        busCallUs: "Call us for a quote",
+        callForQuote: "Call for quote",
+        // TPMR options
+        wheelchairType: "Wheelchair type",
+        wheelchairFoldable: "Foldable wheelchair - Standard vehicle",
+        wheelchairRamp: "Non-foldable / Electric wheelchair - Vehicle with ramp",
+        // VSL
+        vslInfo: "Transport covered by French Social Security",
+        vslPaymentTitle: "No payment on board",
+        vslPaymentDesc: "This transport is covered by CPAM. Bring your transport voucher issued by your doctor. Coverage is direct, no payment is required.",
+        vslCovered: "Covered",
+        // Child seat
+        childSeat: "Child seat",
+        childSeatNone: "No child seat",
+        childSeatBaby: "Baby seat (0-12 months)",
+        childSeatChild: "Child seat (1-4 years)",
+        childSeatBooster: "Booster seat (4-10 years)",
+        childAge: "Child's age",
+        childAgePlaceholder: "E.g: 3 years old",
       },
       // Services
       services: {
@@ -218,7 +288,7 @@ const resources = {
         },
         medical: {
           title: "Medical Transport",
-          description: "Discreet transportation to your medical appointments.",
+          description: "CPAM approved VSL and wheelchair accessible vehicles for reduced mobility.",
         },
       },
       // Pricing
