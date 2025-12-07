@@ -9,8 +9,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: t('contact.phone'),
-      value: '04 78 00 00 00',
-      href: 'tel:+33478000000',
+      value: '04 87 38 20 65',
+      href: 'tel:+33487382065',
     },
     {
       icon: Mail,

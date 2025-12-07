@@ -21,7 +21,7 @@ const TaxiLyonCentre = () => {
         "name": isFr ? "Comment commander un taxi dans le centre de Lyon ?" : "How to order a taxi in Lyon city center?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": isFr ? "Appelez le 04 72 10 10 10, envoyez un WhatsApp ou réservez en ligne. Nos taxis arrivent en moins de 10 minutes dans le centre de Lyon." : "Call 04 72 10 10 10, send a WhatsApp or book online. Our taxis arrive in less than 10 minutes in Lyon city center."
+          "text": isFr ? "Appelez le 04 87 38 20 65, envoyez un WhatsApp ou réservez en ligne. Nos taxis arrivent en moins de 10 minutes dans le centre de Lyon." : "Call 04 87 38 20 65, send a WhatsApp or book online. Our taxis arrive in less than 10 minutes in Lyon city center."
         }
       },
       {
@@ -59,7 +59,7 @@ const TaxiLyonCentre = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
-      "telephone": "+33472101010"
+      "telephone": "+33487382065"
     }
   };
 
@@ -108,7 +108,7 @@ const TaxiLyonCentre = () => {
     <>
       <Helmet>
         <title>{isFr ? "Taxi Lyon Centre-Ville | Bellecour, Vieux Lyon, Presqu'île | 24h/24" : "Lyon City Center Taxi | Bellecour, Vieux Lyon, Presqu'île | 24/7"}</title>
-        <meta name="description" content={isFr ? "Réservez un taxi dans le centre de Lyon : Bellecour, Vieux Lyon, Confluence, Croix-Rousse. Service 24h/24, arrivée en 10 min. ☎ 04 72 10 10 10" : "Book a taxi in Lyon city center: Bellecour, Vieux Lyon, Confluence, Croix-Rousse. 24/7 service, arrival in 10 min. ☎ +33 4 72 10 10 10"} />
+        <meta name="description" content={isFr ? "Réservez un taxi dans le centre de Lyon : Bellecour, Vieux Lyon, Confluence, Croix-Rousse. Service 24h/24, arrivée en 10 min. ☎ 04 87 38 20 65" : "Book a taxi in Lyon city center: Bellecour, Vieux Lyon, Confluence, Croix-Rousse. 24/7 service, arrival in 10 min. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "taxi lyon centre, taxi bellecour, taxi vieux lyon, taxi presqu'île, taxi confluence, réserver taxi lyon" : "lyon center taxi, taxi bellecour, taxi vieux lyon, taxi presqu'île, taxi confluence, book taxi lyon"} />
         <link rel="canonical" href="https://taxilyon.cab/taxi-lyon-centre" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -140,9 +140,9 @@ const TaxiLyonCentre = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <Button size="lg" className="text-lg px-8" asChild>
-                    <a href="tel:+33472101010">
+                    <a href="tel:+33487382065">
                       <Phone className="mr-2 h-5 w-5" />
-                      04 72 10 10 10
+                      04 87 38 20 65
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-8" asChild>
@@ -268,9 +268,9 @@ const TaxiLyonCentre = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8" asChild>
-                  <a href="tel:+33472101010">
+                  <a href="tel:+33487382065">
                     <Phone className="mr-2 h-5 w-5" />
-                    04 72 10 10 10
+                    04 87 38 20 65
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
