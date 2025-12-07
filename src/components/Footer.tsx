@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { Heart, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -12,9 +13,9 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    { label: t('footer.legal'), href: '#' },
-    { label: t('footer.privacy'), href: '#' },
-    { label: t('footer.terms'), href: '#' },
+    { label: t('footer.legal'), href: '/mentions-legales' },
+    { label: t('footer.privacy'), href: '/politique-confidentialite' },
+    { label: t('footer.terms'), href: '/cgv' },
   ];
 
   const socialLinks = [
@@ -80,12 +81,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {legalLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
