@@ -1,17 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Clock, Users, Briefcase, CreditCard, Banknote, Phone, Mail, User, Car, Bus, Accessibility, Baby, FileText, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, Users, Briefcase, CreditCard, Banknote, Phone, Mail, User, Car, Bus, Accessibility, Baby, FileText, AlertCircle, Calculator, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import AddressAutocomplete from './AddressAutocomplete';
+import { useDistanceCalculator } from '@/hooks/useDistanceCalculator';
 
 type VehicleType = 'sedan' | 'minivan' | 'bus' | 'tpmr' | 'vsl';
 type WheelchairType = 'foldable' | 'ramp';
 type ChildSeatType = 'none' | 'baby' | 'child' | 'booster';
 
 const BookingForm = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isFr = i18n.language === 'fr';
+  const { estimate, isCalculating, calculateFare, clearEstimate } = useDistanceCalculator();
+  
   const [formData, setFormData] = useState({
     pickup: '',
     destination: '',
@@ -28,6 +33,18 @@ const BookingForm = () => {
     phone: '',
     email: '',
   });
+
+  // Recalculate fare when addresses or passengers change
+  useEffect(() => {
+    if (formData.pickup && formData.destination) {
+      const timer = setTimeout(() => {
+        calculateFare(formData.pickup, formData.destination, parseInt(formData.passengers));
+      }, 500);
+      return () => clearTimeout(timer);
+    } else {
+      clearEstimate();
+    }
+  }, [formData.pickup, formData.destination, formData.passengers, calculateFare, clearEstimate]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -199,14 +216,13 @@ const BookingForm = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Pickup */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" />
+                <label className="text-sm font-medium text-foreground">
                   {t('booking.pickup')}
                 </label>
-                <Input
+                <AddressAutocomplete
                   name="pickup"
                   value={formData.pickup}
-                  onChange={handleChange}
+                  onChange={(value) => setFormData(prev => ({ ...prev, pickup: value }))}
                   placeholder={t('booking.pickupPlaceholder')}
                   required
                 />
@@ -214,14 +230,13 @@ const BookingForm = () => {
 
               {/* Destination */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" />
+                <label className="text-sm font-medium text-foreground">
                   {t('booking.destination')}
                 </label>
-                <Input
+                <AddressAutocomplete
                   name="destination"
                   value={formData.destination}
-                  onChange={handleChange}
+                  onChange={(value) => setFormData(prev => ({ ...prev, destination: value }))}
                   placeholder={t('booking.destinationPlaceholder')}
                   required
                 />
@@ -428,6 +443,69 @@ const BookingForm = () => {
                 </div>
               )}
             </div>
+
+            {/* Fare Estimate Display */}
+            {!isBus && !isVSL && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ 
+                  opacity: (estimate || isCalculating) ? 1 : 0,
+                  height: (estimate || isCalculating) ? 'auto' : 0
+                }}
+                className="mt-6 overflow-hidden"
+              >
+                <div className="p-5 rounded-2xl bg-gradient-gold/20 border border-primary/30">
+                  {isCalculating ? (
+                    <div className="flex items-center justify-center gap-3 py-2">
+                      <Loader2 className="w-5 h-5 animate-spin text-primary" />
+                      <span className="text-muted-foreground">
+                        {isFr ? 'Calcul du tarif...' : 'Calculating fare...'}
+                      </span>
+                    </div>
+                  ) : estimate && (
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <Calculator className="w-6 h-6 text-primary" />
+                        <div>
+                          <p className="text-sm text-muted-foreground">
+                            {isFr ? 'Estimation du tarif' : 'Fare estimate'}
+                          </p>
+                          <p className="text-xs text-muted-foreground/70">
+                            {estimate.distance} km • ~{estimate.duration} min
+                            {estimate.isNight && (
+                              <span className="ml-2 text-primary">
+                                ({isFr ? 'Tarif nuit' : 'Night rate'})
+                              </span>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl font-bold text-gradient">
+                          {estimate.minPrice}€ - {estimate.maxPrice}€
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )}
+
+            {isVSL && (
+              <div className="mt-6 p-5 rounded-2xl bg-primary/10 border border-primary/30">
+                <div className="flex items-center gap-3">
+                  <FileText className="w-6 h-6 text-primary" />
+                  <div>
+                    <p className="text-sm text-muted-foreground">
+                      {isFr ? 'Transport conventionné' : 'Covered transport'}
+                    </p>
+                    <p className="text-xl font-bold text-primary">
+                      {t('booking.vslCovered')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Submit */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-end gap-4">
