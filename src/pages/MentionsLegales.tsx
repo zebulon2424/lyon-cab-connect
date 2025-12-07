@@ -27,10 +27,9 @@ const MentionsLegales = () => {
               {isFr ? '1. Éditeur du site' : '1. Website Publisher'}
             </h2>
             <div className="text-muted-foreground space-y-2">
-              <p><strong>{isFr ? 'Raison sociale' : 'Company name'}:</strong> Taxi Lyon Cab</p>
+              <p><strong>{isFr ? 'Raison sociale' : 'Company name'}:</strong> (Taxi) LYON CAB</p>
               <p><strong>{isFr ? 'Forme juridique' : 'Legal form'}:</strong> [À compléter]</p>
-              <p><strong>{isFr ? 'Capital social' : 'Share capital'}:</strong> [À compléter]</p>
-              <p><strong>SIRET:</strong> [À compléter]</p>
+              <p><strong>SIRET:</strong> 792 940 447</p>
               <p><strong>{isFr ? 'Numéro de TVA intracommunautaire' : 'VAT number'}:</strong> [À compléter]</p>
               <p><strong>{isFr ? 'Siège social' : 'Registered office'}:</strong> 254 rue Vendôme, 69003 Lyon, France</p>
               <p><strong>{isFr ? 'Téléphone' : 'Phone'}:</strong> 04 78 00 00 00</p>
