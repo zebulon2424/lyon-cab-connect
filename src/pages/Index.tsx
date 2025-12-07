@@ -6,6 +6,8 @@ import Pricing from '@/components/Pricing';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import LiveChat from '@/components/LiveChat';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -20,6 +22,8 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
+      <LiveChat />
     </div>
   );
 };
