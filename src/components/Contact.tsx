@@ -15,8 +15,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: t('contact.email'),
-      value: 'contact@taxilyoncab.fr',
-      href: 'mailto:contact@taxilyoncab.fr',
+      value: 'contact@taxilyon.cab',
+      href: 'mailto:contact@taxilyon.cab',
     },
     {
       icon: MapPin,
