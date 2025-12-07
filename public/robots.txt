@@ -1,3 +1,11 @@
+# robots.txt for Taxi Lyon Cab
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://taxilyoncab.fr/sitemap.xml
+
+# Allow all crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +18,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: Yandex
 Allow: /

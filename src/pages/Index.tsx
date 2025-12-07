@@ -8,10 +8,11 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LiveChat from '@/components/LiveChat';
 import WhatsAppButton from '@/components/WhatsAppButton';
-
+import SEO from '@/components/SEO';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO page="home" />
       <Header />
       <main>
         <Hero />
