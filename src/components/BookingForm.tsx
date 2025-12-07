@@ -430,15 +430,7 @@ const BookingForm = () => {
             </div>
 
             {/* Submit */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-              {!isBus && (
-                <div className="text-center sm:text-left">
-                  <p className="text-sm text-muted-foreground">{t('booking.estimatedPrice')}</p>
-                  <p className="text-3xl font-bold text-gradient">
-                    {isVSL ? t('booking.vslCovered') : '~35€'}
-                  </p>
-                </div>
-              )}
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-end gap-4">
               {isBus ? (
                 <div className="w-full flex flex-col sm:flex-row items-center gap-4">
                   <div className="text-center sm:text-left flex-1">
