@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoTaxi from '@/assets/logo-taxi-lyon.png';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -38,10 +39,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">T</span>
-            </div>
+          <a href="#" className="flex items-center gap-3">
+            <img 
+              src={logoTaxi} 
+              alt="Taxi Lyon Cab Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <div className="flex flex-col">
               <span className="font-bold text-lg text-foreground leading-tight">Taxi Lyon</span>
               <span className="text-primary text-sm font-medium leading-tight">CAB</span>
