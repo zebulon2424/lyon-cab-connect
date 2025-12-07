@@ -45,7 +45,7 @@ const TaxiAeroportLyon = () => {
         "name": isFr ? "Le chauffeur m'attend-il à l'aéroport avec une pancarte ?" : "Will the driver wait for me at the airport with a sign?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": isFr ? "Oui, votre chauffeur vous attend dans le hall des arrivées avec une pancarte à votre nom. 30 minutes d'attente incluses gratuitement." : "Yes, your driver waits for you in the arrivals hall with a sign with your name. 30 minutes of waiting time included for free."
+          "text": isFr ? "Oui, votre chauffeur vous attend dans le hall des arrivées avec une pancarte à votre nom. 1 heure d'attente incluse gratuitement." : "Yes, your driver waits for you in the arrivals hall with a sign with your name. 1 hour of waiting time included for free."
         }
       },
       {
@@ -238,7 +238,7 @@ const TaxiAeroportLyon = () => {
                 <div className="grid gap-4">
                   {[
                     isFr ? "Chauffeur professionnel avec pancarte à votre nom dans le hall des arrivées" : "Professional driver with sign with your name in the arrivals hall",
-                    isFr ? "30 minutes d'attente incluses gratuitement en cas de retard de vol" : "30 minutes of waiting time included free in case of flight delay",
+                    isFr ? "1 heure d'attente incluse gratuitement en cas de retard de vol" : "1 hour of waiting time included free in case of flight delay",
                     isFr ? "Suivi de votre vol en temps réel pour ajuster l'heure de prise en charge" : "Real-time flight tracking to adjust pickup time",
                     isFr ? "Véhicules spacieux pour vos bagages (2 valises + 2 bagages cabine inclus)" : "Spacious vehicles for your luggage (2 suitcases + 2 cabin bags included)",
                     isFr ? "Prix fixe garanti - pas de compteur, pas de mauvaise surprise" : "Guaranteed fixed price - no meter, no bad surprises",

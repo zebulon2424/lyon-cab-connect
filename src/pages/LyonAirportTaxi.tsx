@@ -49,7 +49,7 @@ const LyonAirportTaxi = () => {
         "name": "What if my flight is delayed?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We track your flight in real-time and adjust pickup time accordingly. 30 minutes of waiting time is included free of charge for airport pickups."
+          "text": "We track your flight in real-time and adjust pickup time accordingly. 1 hour of waiting time is included free of charge for airport pickups."
         }
       },
       {
@@ -223,7 +223,7 @@ const LyonAirportTaxi = () => {
                 Lyon Airport Taxi Prices
               </h2>
               <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                All prices are fixed and include meet & greet, 30 minutes waiting time, and luggage assistance.
+                All prices are fixed and include meet & greet, 1 hour waiting time, and luggage assistance.
               </p>
               
               <div className="max-w-4xl mx-auto overflow-x-auto">
@@ -296,7 +296,7 @@ const LyonAirportTaxi = () => {
                     "English-speaking professional drivers trained in customer service",
                     "Meet & greet service - driver waits with your name sign at arrivals",
                     "Free flight tracking - we monitor your flight and adjust pickup time",
-                    "30 minutes free waiting time included for airport pickups",
+                    "1 hour free waiting time included for airport pickups",
                     "Spacious vehicles with room for luggage (2 large suitcases + 2 carry-ons)",
                     "Fixed price guaranteed - no meter, no surge pricing, no hidden fees",
                     "Free baby seats and booster seats available on request",
