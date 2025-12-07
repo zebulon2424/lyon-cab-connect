@@ -5,7 +5,7 @@ interface GoogleMapsProviderProps {
 }
 
 // API key is public and restricted by domain in Google Cloud Console
-const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
+const GOOGLE_MAPS_API_KEY = 'AIzaSyCsX1Du28X5cMYrPY0hhlw1mhNtFovhYnQ';
 
 const GoogleMapsProvider = ({ children }: GoogleMapsProviderProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
