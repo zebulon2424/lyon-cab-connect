@@ -29,7 +29,7 @@ const TaxiGarePartDieu = () => {
         "name": isFr ? "Quel est le prix d'un taxi depuis la Gare Part-Dieu ?" : "What is the taxi price from Part-Dieu Station?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": isFr ? "Le tarif moyen est de 12-15€ pour Lyon centre, 55€ pour l'aéroport Saint-Exupéry. Prix fixe sur réservation, pas de mauvaise surprise." : "The average rate is €12-15 to Lyon center, €55 to Saint-Exupéry Airport. Fixed price on booking, no bad surprises."
+          "text": isFr ? "Le tarif moyen est de 12-15€ pour Lyon centre, 55€ pour l'aéroport Saint-Exupéry. Tarif au compteur réglementé, transparent et sans surprise." : "The average rate is €12-15 to Lyon center, €55 to Saint-Exupéry Airport. Regulated metered rate, transparent with no surprises."
         }
       },
       {
@@ -131,8 +131,8 @@ const TaxiGarePartDieu = () => {
                 
                 <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                   {isFr 
-                    ? "Service de taxi professionnel à la Gare Lyon Part-Dieu. Réservation à l'avance, prise en charge rapide, prix fixe garanti."
-                    : "Professional taxi service at Lyon Part-Dieu Station. Advance booking, quick pickup, guaranteed fixed price."}
+                    ? "Service de taxi professionnel à la Gare Lyon Part-Dieu. Réservation à l'avance, prise en charge rapide, tarif au compteur réglementé."
+                    : "Professional taxi service at Lyon Part-Dieu Station. Advance booking, quick pickup, regulated metered rate."}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -184,8 +184,8 @@ const TaxiGarePartDieu = () => {
               </h2>
               <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
                 {isFr 
-                  ? "Tarifs indicatifs. Prix fixe garanti sur réservation à l'avance."
-                  : "Indicative prices. Fixed price guaranteed on advance booking."}
+                  ? "Tarifs indicatifs au compteur. Le prix final peut varier selon le trafic et l'itinéraire."
+                  : "Indicative metered rates. Final price may vary depending on traffic and route."}
               </p>
               
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -231,8 +231,8 @@ const TaxiLyonCentre = () => {
               
               <p className="text-center text-muted-foreground mt-8">
                 {isFr 
-                  ? "Tarifs indicatifs de jour. Prix fixe garanti sur réservation à l'avance."
-                  : "Indicative daytime rates. Fixed price guaranteed on advance booking."}
+                  ? "Tarifs indicatifs au compteur. Le prix final peut varier selon le trafic et l'itinéraire."
+                  : "Indicative metered rates. Final price may vary depending on traffic and route."}
               </p>
             </div>
           </section>

@@ -298,7 +298,7 @@ const LyonAirportTaxi = () => {
                     "Free flight tracking - we monitor your flight and adjust pickup time",
                     "1 hour free waiting time included for airport pickups",
                     "Spacious vehicles with room for luggage (2 large suitcases + 2 carry-ons)",
-                    "Fixed price guaranteed - no meter, no surge pricing, no hidden fees",
+                    "Regulated metered rate - transparent pricing within the indicated range",
                     "Free baby seats and booster seats available on request",
                     "All major credit cards accepted, including contactless payments"
                   ].map((item, index) => (

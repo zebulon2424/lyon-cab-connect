@@ -29,7 +29,7 @@ const TaxiGarePerrache = () => {
         "name": isFr ? "Quel est le prix d'un taxi depuis Perrache ?" : "What is the taxi price from Perrache?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": isFr ? "Le tarif moyen est de 10-14€ pour Lyon centre, 65€ pour l'aéroport Saint-Exupéry. Prix fixe garanti sur réservation." : "The average rate is €10-14 to Lyon center, €65 to Saint-Exupéry Airport. Fixed price guaranteed on booking."
+          "text": isFr ? "Le tarif moyen est de 10-14€ pour Lyon centre, 65€ pour l'aéroport Saint-Exupéry. Tarif au compteur réglementé, transparent et sans surprise." : "The average rate is €10-14 to Lyon center, €65 to Saint-Exupéry Airport. Regulated metered rate, transparent with no surprises."
         }
       },
       {
