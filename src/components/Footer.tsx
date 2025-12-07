@@ -13,6 +13,15 @@ const Footer = () => {
     { label: t('nav.contact'), href: '#contact' },
   ];
 
+  const destinationLinks = [
+    { label: 'Taxi Aéroport Lyon', href: '/taxi-aeroport-lyon' },
+    { label: 'Lyon Airport Taxi', href: '/lyon-airport-taxi' },
+    { label: 'Taxi Gare Part-Dieu', href: '/taxi-gare-part-dieu' },
+    { label: 'Taxi Gare Perrache', href: '/taxi-gare-perrache' },
+    { label: 'Taxi Lyon Centre', href: '/taxi-lyon-centre' },
+    { label: 'VTC vs Taxi Lyon', href: '/vtc-taxi-lyon' },
+  ];
+
   const legalLinks = [
     { label: t('footer.legal'), href: '/mentions-legales' },
     { label: t('footer.privacy'), href: '/politique-confidentialite' },
@@ -28,7 +37,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
@@ -73,6 +82,23 @@ const Footer = () => {
                   >
                     {link.label}
                   </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Destination Links */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Destinations</h4>
+            <ul className="space-y-2">
+              {destinationLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
