@@ -43,8 +43,8 @@ const MentionsLegales = () => {
               {isFr ? '2. Hébergement' : '2. Hosting'}
             </h2>
             <div className="text-muted-foreground space-y-2">
-              <p><strong>{isFr ? 'Hébergeur' : 'Host'}:</strong> 1&1 IONOS</p>
-              <p><strong>{isFr ? 'Adresse' : 'Address'}:</strong> 7, place de la Gare, 57200 Sarreguemines, France</p>
+              <p><strong>{isFr ? 'Hébergeur' : 'Host'}:</strong> Hostinger International Ltd.</p>
+              <p><strong>{isFr ? 'Adresse' : 'Address'}:</strong> 61 Lordou Vironos Street, 6023 Larnaca, Cyprus</p>
             </div>
           </section>
 
