@@ -28,13 +28,13 @@ const MentionsLegales = () => {
             </h2>
             <div className="text-muted-foreground space-y-2">
               <p><strong>{isFr ? 'Raison sociale' : 'Company name'}:</strong> (Taxi) LYON CAB</p>
-              <p><strong>{isFr ? 'Forme juridique' : 'Legal form'}:</strong> [À compléter]</p>
+              <p><strong>{isFr ? 'Forme juridique' : 'Legal form'}:</strong> EIRL</p>
               <p><strong>SIRET:</strong> 792 940 447</p>
-              <p><strong>{isFr ? 'Numéro de TVA intracommunautaire' : 'VAT number'}:</strong> [À compléter]</p>
+              <p><strong>{isFr ? 'Numéro de TVA intracommunautaire' : 'VAT number'}:</strong> FR46792940447</p>
               <p><strong>{isFr ? 'Siège social' : 'Registered office'}:</strong> 254 rue Vendôme, 69003 Lyon, France</p>
               <p><strong>{isFr ? 'Téléphone' : 'Phone'}:</strong> 04 78 00 00 00</p>
-              <p><strong>Email:</strong> contact@taxilyoncab.fr</p>
-              <p><strong>{isFr ? 'Directeur de la publication' : 'Publication director'}:</strong> [À compléter]</p>
+              <p><strong>Email:</strong> contact@taxilyon.cab</p>
+              <p><strong>{isFr ? 'Directeur de la publication' : 'Publication director'}:</strong> contact@taxilyon.cab</p>
             </div>
           </section>
 
