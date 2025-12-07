@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   const destinationLinks = [
-    { label: 'Taxi Aéroport Lyon', href: '/taxi-aeroport-lyon' },
+    { label: 'Taxi Aéroport Lyon', href: '/taxi-aeroport-lyon-saint-exupery' },
     { label: 'Lyon Airport Taxi', href: '/lyon-airport-taxi' },
     { label: 'Taxi Gare Part-Dieu', href: '/taxi-gare-part-dieu' },
     { label: 'Taxi Gare Perrache', href: '/taxi-gare-perrache' },
