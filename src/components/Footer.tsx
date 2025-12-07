@@ -93,12 +93,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-border mt-10 pt-6 flex items-center justify-center">
           <p className="text-sm text-muted-foreground">
             {t('footer.copyright')}
-          </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            {t('footer.madeWith')} <Heart className="w-4 h-4 text-primary fill-primary" /> {t('footer.inLyon')}
           </p>
         </div>
       </div>
