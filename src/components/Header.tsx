@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 import logoTaxi from '@/assets/logo-taxi-lyon.png';
 
 const Header = () => {
@@ -23,11 +24,14 @@ const Header = () => {
     i18n.changeLanguage(newLang);
   };
 
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   const navItems = [
-    { href: '#home', label: t('nav.home') },
-    { href: '#services', label: t('nav.services') },
-    { href: '#pricing', label: t('nav.pricing') },
-    { href: '#contact', label: t('nav.contact') },
+    { href: isHomePage ? '#home' : '/#home', label: t('nav.home') },
+    { href: isHomePage ? '#services' : '/#services', label: t('nav.services') },
+    { href: isHomePage ? '#pricing' : '/#pricing', label: t('nav.pricing') },
+    { href: isHomePage ? '#contact' : '/#contact', label: t('nav.contact') },
   ];
 
   return (
@@ -39,7 +43,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img 
               src={logoTaxi} 
               alt="Taxi Lyon Cab Logo" 
@@ -49,7 +53,7 @@ const Header = () => {
               <span className="font-bold text-lg text-foreground leading-tight">Taxi Lyon</span>
               <span className="text-primary text-sm font-medium leading-tight">CAB</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -74,9 +78,9 @@ const Header = () => {
               <span className="font-medium">{i18n.language.toUpperCase()}</span>
             </button>
 
-            <a href="tel:+33600000000" className="flex items-center gap-2 text-primary font-semibold">
+            <a href="tel:+33487382065" className="flex items-center gap-2 text-primary font-semibold">
               <Phone size={18} />
-              <span>04 78 00 00 00</span>
+              <span>04 87 38 20 65</span>
             </a>
 
             <Button variant="hero" size="lg" asChild>
@@ -123,11 +127,11 @@ const Header = () => {
                 <span>{i18n.language === 'fr' ? 'English' : 'Français'}</span>
               </button>
               <a
-                href="tel:+33600000000"
+                href="tel:+33487382065"
                 className="flex items-center gap-2 py-3 px-4 text-primary font-semibold"
               >
                 <Phone size={18} />
-                <span>04 78 00 00 00</span>
+                <span>04 87 38 20 65</span>
               </a>
               <Button variant="hero" className="mt-2" asChild>
                 <a href="#booking">{t('nav.book')}</a>
