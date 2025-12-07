@@ -59,7 +59,7 @@ const TaxiGarePerrache = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
-      "telephone": "+33472101010"
+      "telephone": "+33487382065"
     }
   };
 
@@ -101,7 +101,7 @@ const TaxiGarePerrache = () => {
     <>
       <Helmet>
         <title>{isFr ? "Taxi Gare Perrache Lyon | Réservation 24h/24 | Dès 10€" : "Lyon Perrache Station Taxi | 24/7 Booking | From €10"}</title>
-        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare de Perrache Lyon. Service 24h/24, prix fixe dès 10€. Transfert aéroport 65€. ☎ 04 72 10 10 10" : "Book your taxi at Lyon Perrache Station. 24/7 service, fixed price from €10. Airport transfer €65. ☎ +33 4 72 10 10 10"} />
+        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare de Perrache Lyon. Service 24h/24, prix fixe dès 10€. Transfert aéroport 65€. ☎ 04 87 38 20 65" : "Book your taxi at Lyon Perrache Station. 24/7 service, fixed price from €10. Airport transfer €65. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "taxi gare perrache, taxi lyon perrache, réserver taxi perrache, taxi gare lyon, transfert perrache aéroport" : "taxi perrache station, lyon perrache taxi, book taxi perrache, perrache airport transfer"} />
         <link rel="canonical" href="https://taxilyon.cab/taxi-gare-perrache" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -133,9 +133,9 @@ const TaxiGarePerrache = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <Button size="lg" className="text-lg px-8" asChild>
-                    <a href="tel:+33472101010">
+                    <a href="tel:+33487382065">
                       <Phone className="mr-2 h-5 w-5" />
-                      04 72 10 10 10
+                      04 87 38 20 65
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-8" asChild>
@@ -258,9 +258,9 @@ const TaxiGarePerrache = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8" asChild>
-                  <a href="tel:+33472101010">
+                  <a href="tel:+33487382065">
                     <Phone className="mr-2 h-5 w-5" />
-                    04 72 10 10 10
+                    04 87 38 20 65
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>

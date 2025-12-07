@@ -33,7 +33,7 @@ const LyonAirportTaxi = () => {
         "name": "Can I book a Lyon Airport taxi in advance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we recommend booking your airport taxi 24 hours in advance. You can book by phone (+33 4 72 10 10 10), WhatsApp, or through our online booking form."
+          "text": "Yes, we recommend booking your airport taxi 24 hours in advance. You can book by phone (+33 4 87 38 20 65), WhatsApp, or through our online booking form."
         }
       },
       {
@@ -71,7 +71,7 @@ const LyonAirportTaxi = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
-      "telephone": "+33472101010",
+      "telephone": "+33487382065",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lyon",
@@ -141,7 +141,7 @@ const LyonAirportTaxi = () => {
     <>
       <Helmet>
         <title>Lyon Airport Taxi | Saint-Exupéry Transfer €59 Fixed Price | English Speaking Drivers</title>
-        <meta name="description" content="Book your Lyon Airport taxi online. Fixed price €59 to city center, English-speaking drivers, meet & greet service. Available 24/7. Call +33 4 72 10 10 10" />
+        <meta name="description" content="Book your Lyon Airport taxi online. Fixed price €59 to city center, English-speaking drivers, meet & greet service. Available 24/7. Call +33 4 87 38 20 65" />
         <meta name="keywords" content="lyon airport taxi, saint exupery airport taxi, LYS taxi, lyon airport transfer, taxi from lyon airport, english speaking taxi lyon, airport shuttle lyon" />
         <link rel="canonical" href="https://taxilyon.cab/lyon-airport-taxi" />
         <meta property="og:title" content="Lyon Airport Taxi | €59 Fixed Price Transfer | Taxi Lyon Cab" />
@@ -176,9 +176,9 @@ const LyonAirportTaxi = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <Button size="lg" className="text-lg px-8" asChild>
-                    <a href="tel:+33472101010">
+                    <a href="tel:+33487382065">
                       <Phone className="mr-2 h-5 w-5" />
-                      +33 4 72 10 10 10
+                      +33 4 87 38 20 65
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-8" asChild>
@@ -341,9 +341,9 @@ const LyonAirportTaxi = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8" asChild>
-                  <a href="tel:+33472101010">
+                  <a href="tel:+33487382065">
                     <Phone className="mr-2 h-5 w-5" />
-                    +33 4 72 10 10 10
+                    +33 4 87 38 20 65
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>

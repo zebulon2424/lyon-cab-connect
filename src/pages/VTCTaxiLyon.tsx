@@ -129,7 +129,7 @@ const VTCTaxiLyon = () => {
     <>
       <Helmet>
         <title>{isFr ? "VTC ou Taxi Lyon : Comparatif et Différences | Taxi Lyon Cab" : "VTC vs Taxi Lyon: Comparison and Differences | Taxi Lyon Cab"}</title>
-        <meta name="description" content={isFr ? "VTC ou Taxi à Lyon ? Découvrez les différences, avantages et tarifs. Le taxi : tarif réglementé, pas de surge pricing, accès voies de bus. ☎ 04 72 10 10 10" : "VTC or Taxi in Lyon? Discover the differences, advantages and prices. Taxi: regulated rates, no surge pricing, bus lane access. ☎ +33 4 72 10 10 10"} />
+        <meta name="description" content={isFr ? "VTC ou Taxi à Lyon ? Découvrez les différences, avantages et tarifs. Le taxi : tarif réglementé, pas de surge pricing, accès voies de bus. ☎ 04 87 38 20 65" : "VTC or Taxi in Lyon? Discover the differences, advantages and prices. Taxi: regulated rates, no surge pricing, bus lane access. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "vtc lyon, taxi vs vtc, différence taxi vtc, uber lyon, chauffeur privé lyon, taxi ou vtc lyon" : "vtc lyon, taxi vs vtc, taxi vtc difference, uber lyon, private driver lyon, taxi or vtc lyon"} />
         <link rel="canonical" href="https://taxilyon.cab/vtc-taxi-lyon" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -160,9 +160,9 @@ const VTCTaxiLyon = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" className="text-lg px-8" asChild>
-                    <a href="tel:+33472101010">
+                    <a href="tel:+33487382065">
                       <Phone className="mr-2 h-5 w-5" />
-                      04 72 10 10 10
+                      04 87 38 20 65
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-8" asChild>
@@ -315,9 +315,9 @@ const VTCTaxiLyon = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8" asChild>
-                  <a href="tel:+33472101010">
+                  <a href="tel:+33487382065">
                     <Phone className="mr-2 h-5 w-5" />
-                    04 72 10 10 10
+                    04 87 38 20 65
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>

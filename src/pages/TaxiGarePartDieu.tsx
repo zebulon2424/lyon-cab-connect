@@ -59,7 +59,7 @@ const TaxiGarePartDieu = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
-      "telephone": "+33472101010"
+      "telephone": "+33487382065"
     },
     "areaServed": {
       "@type": "City",
@@ -105,7 +105,7 @@ const TaxiGarePartDieu = () => {
     <>
       <Helmet>
         <title>{isFr ? "Taxi Gare Part-Dieu Lyon | Réservation 24h/24 | À partir de 12€" : "Lyon Part-Dieu Station Taxi | 24/7 Booking | From €12"}</title>
-        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare Part-Dieu Lyon. Service 24h/24, prix fixe à partir de 12€. Transfert aéroport 55€. ☎ 04 72 10 10 10" : "Book your taxi at Lyon Part-Dieu Station. 24/7 service, fixed price from €12. Airport transfer €55. ☎ +33 4 72 10 10 10"} />
+        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare Part-Dieu Lyon. Service 24h/24, prix fixe à partir de 12€. Transfert aéroport 55€. ☎ 04 87 38 20 65" : "Book your taxi at Lyon Part-Dieu Station. 24/7 service, fixed price from €12. Airport transfer €55. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "taxi gare part dieu, taxi lyon part dieu, réserver taxi part dieu, taxi gare lyon, transfert part dieu aéroport" : "taxi part dieu station, lyon part dieu taxi, book taxi part dieu, lyon station taxi, part dieu airport transfer"} />
         <link rel="canonical" href="https://taxilyon.cab/taxi-gare-part-dieu" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -137,9 +137,9 @@ const TaxiGarePartDieu = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                   <Button size="lg" className="text-lg px-8" asChild>
-                    <a href="tel:+33472101010">
+                    <a href="tel:+33487382065">
                       <Phone className="mr-2 h-5 w-5" />
-                      04 72 10 10 10
+                      04 87 38 20 65
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg px-8" asChild>
@@ -275,9 +275,9 @@ const TaxiGarePartDieu = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8" asChild>
-                  <a href="tel:+33472101010">
+                  <a href="tel:+33487382065">
                     <Phone className="mr-2 h-5 w-5" />
-                    04 72 10 10 10
+                    04 87 38 20 65
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
