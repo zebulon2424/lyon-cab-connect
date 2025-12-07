@@ -141,8 +141,8 @@ const CGV = () => {
             </h2>
             <p className="text-muted-foreground">
               {isFr 
-                ? 'Toute réclamation doit être adressée par email à contact@taxilyoncab.fr dans un délai de 7 jours suivant la prestation. Nous nous engageons à répondre sous 48 heures ouvrées.'
-                : 'Any complaint must be sent by email to contact@taxilyoncab.fr within 7 days of the service. We commit to responding within 48 business hours.'}
+                ? 'Toute réclamation doit être adressée par email à contact@taxilyon.cab dans un délai de 7 jours suivant la prestation. Nous nous engageons à répondre sous 48 heures ouvrées.'
+                : 'Any complaint must be sent by email to contact@taxilyon.cab within 7 days of the service. We commit to responding within 48 business hours.'}
             </p>
           </section>
 
