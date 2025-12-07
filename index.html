@@ -22,7 +22,7 @@
     <link rel="alternate" hreflang="en" href="https://taxilyoncab.fr/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="https://taxilyoncab.fr/" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph FR -->
     <meta property="og:title" content="Taxi Lyon Aéroport Saint-Exupéry | Réservation 24h/24" />
     <meta property="og:description" content="Taxi Lyon ✓ Transfert aéroport Saint-Exupéry ✓ Gare Part-Dieu & Perrache ✓ Réservation 24h/24 ✓ Tarifs fixes." />
     <meta property="og:type" content="website" />
@@ -36,15 +36,15 @@
     <meta name="twitter:title" content="Taxi Lyon Aéroport | Réservation 24h/24 - Taxi Lyon Cab" />
     <meta name="twitter:description" content="Taxi Lyon ✓ Transfert aéroport Saint-Exupéry ✓ Tarifs fixes ✓ Réservation en ligne 24h/24." />
 
-    <!-- Structured Data - TaxiService -->
+    <!-- Structured Data - TaxiService (Multilingual) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TaxiService",
       "@id": "https://taxilyoncab.fr/#taxiservice",
       "name": "Taxi Lyon Cab",
-      "alternateName": ["Taxi Lyon Aéroport", "Taxi Saint-Exupéry", "Lyon Airport Taxi"],
-      "description": "Service de taxi premium à Lyon. Transferts aéroport Saint-Exupéry, gares Part-Dieu et Perrache. Réservation 24h/24.",
+      "alternateName": ["Taxi Lyon Aéroport", "Taxi Saint-Exupéry", "Lyon Airport Taxi", "Lyon Taxi Service", "LYS Airport Taxi", "Lyon Saint-Exupéry Taxi"],
+      "description": "Premium taxi service in Lyon, France. Airport transfers to Lyon Saint-Exupéry (LYS), train station pickups at Part-Dieu and Perrache. Book online 24/7.",
       "url": "https://taxilyoncab.fr",
       "telephone": "+33478000000",
       "email": "contact@taxilyon.cab",
@@ -66,13 +66,13 @@
         {"@type": "City", "name": "Villeurbanne"},
         {"@type": "City", "name": "Vénissieux"},
         {"@type": "City", "name": "Bron"},
-        {"@type": "Place", "name": "Aéroport Lyon Saint-Exupéry"},
-        {"@type": "Place", "name": "Gare de Lyon Part-Dieu"},
-        {"@type": "Place", "name": "Gare de Lyon Perrache"}
+        {"@type": "Airport", "name": "Lyon Saint-Exupéry Airport", "iataCode": "LYS"},
+        {"@type": "TrainStation", "name": "Lyon Part-Dieu Station"},
+        {"@type": "TrainStation", "name": "Lyon Perrache Station"}
       ],
       "priceRange": "€€",
       "currenciesAccepted": "EUR",
-      "paymentAccepted": ["Cash", "Credit Card", "Visa", "Mastercard"],
+      "paymentAccepted": ["Cash", "Credit Card", "Visa", "Mastercard", "American Express"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -88,32 +88,44 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services de taxi",
+        "name": "Taxi Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Transfert Aéroport Saint-Exupéry",
-              "description": "Navette taxi Lyon centre vers aéroport Saint-Exupéry, tarif fixe"
+              "name": "Lyon Airport Transfer",
+              "alternateName": "Transfert Aéroport Saint-Exupéry",
+              "description": "Taxi from Lyon city center to Saint-Exupéry Airport (LYS). Fixed price, no hidden fees."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Taxi Gare Part-Dieu"
+              "name": "Lyon Part-Dieu Station Taxi",
+              "description": "Taxi pickup and drop-off at Lyon Part-Dieu TGV train station"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Taxi Gare Perrache"
+              "name": "Lyon Perrache Station Taxi",
+              "description": "Taxi service to and from Lyon Perrache train station"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business Travel Lyon",
+              "description": "Executive taxi service for business travelers in Lyon"
             }
           }
         ]
-      }
+      },
+      "availableLanguage": ["French", "English"]
     }
     </script>
 
@@ -140,11 +152,15 @@
         "longitude": 4.835659
       },
       "url": "https://taxilyoncab.fr",
-      "priceRange": "€€"
+      "priceRange": "€€",
+      "sameAs": [
+        "https://www.facebook.com/taxilyoncab",
+        "https://www.instagram.com/taxilyoncab"
+      ]
     }
     </script>
 
-    <!-- Structured Data - FAQ -->
+    <!-- Structured Data - FAQ (Bilingual) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -160,6 +176,14 @@
         },
         {
           "@type": "Question",
+          "name": "How much is a taxi from Lyon to the airport?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A taxi from Lyon city center to Saint-Exupéry Airport (LYS) starts from €55 with fixed pricing. No hidden fees, price guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Comment réserver un taxi à Lyon ?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -168,13 +192,60 @@
         },
         {
           "@type": "Question",
-          "name": "Proposez-vous des transferts gare Part-Dieu ?",
+          "name": "How do I book a taxi in Lyon?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui, nous assurons les transferts depuis et vers la gare Part-Dieu 24h/24, 7j/7 avec tarifs fixes."
+            "text": "Book online on our website 24/7, by phone, or via WhatsApp. Instant confirmation and professional English-speaking drivers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a taxi from Lyon Airport to city center?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide 24/7 taxi transfers from Lyon Saint-Exupéry Airport (LYS) to Lyon city center, hotels, Part-Dieu and Perrache stations. Fixed rates, book online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Lyon taxis accept credit cards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we accept Visa, Mastercard, American Express, and cash. You can also pay online when booking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I book a taxi from Lyon Part-Dieu station?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer taxi services from Lyon Part-Dieu TGV train station to any destination in Lyon and the Rhône-Alpes region, including airport transfers."
           }
         }
       ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Taxi Lyon Cab",
+      "alternateName": ["Lyon Airport Taxi", "Lyon Taxi Service"],
+      "url": "https://taxilyoncab.fr",
+      "inLanguage": ["fr-FR", "en-GB"],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://taxilyoncab.fr/#booking"
+        },
+        "result": {
+          "@type": "TaxiReservation",
+          "name": "Taxi Booking"
+        }
+      }
     }
     </script>
   </head>
