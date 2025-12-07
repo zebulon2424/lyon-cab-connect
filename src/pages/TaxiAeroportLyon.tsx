@@ -21,7 +21,7 @@ const TaxiAeroportLyon = () => {
         "name": isFr ? "Quel est le prix d'un taxi Lyon - Aéroport Saint-Exupéry ?" : "What is the price of a taxi from Lyon to Saint-Exupéry Airport?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": isFr ? "Le tarif forfaitaire est de 59€ de jour et 75€ de nuit pour un trajet Lyon centre - Aéroport Saint-Exupéry. Prix fixe garanti, sans surprise." : "The fixed rate is €59 during the day and €75 at night for a Lyon city center - Saint-Exupéry Airport trip. Guaranteed fixed price, no surprises."
+          "text": isFr ? "Le tarif est estimé entre 59€ et 75€ pour un trajet Lyon centre - Aéroport Saint-Exupéry, selon l'heure et le trafic. Tarif au compteur, transparent et réglementé." : "The fare is estimated between €59 and €75 for a Lyon city center - Saint-Exupéry Airport trip, depending on time and traffic. Metered rate, transparent and regulated."
         }
       },
       {
@@ -89,8 +89,8 @@ const TaxiAeroportLyon = () => {
     },
     {
       icon: CreditCard,
-      title: isFr ? "Prix fixe garanti" : "Guaranteed fixed price",
-      description: isFr ? "59€ de jour, 75€ de nuit - sans surprise" : "€59 daytime, €75 nighttime - no surprises"
+      title: isFr ? "Tarif réglementé" : "Regulated pricing",
+      description: isFr ? "Prix au compteur, transparent et sans surprise" : "Metered rate, transparent with no surprises"
     },
     {
       icon: Users,
@@ -141,8 +141,8 @@ const TaxiAeroportLyon = () => {
                 
                 <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                   {isFr 
-                    ? "Transfert professionnel vers l'aéroport Lyon Saint-Exupéry (LYS). Prix fixe garanti, chauffeur ponctuel avec pancarte à votre nom."
-                    : "Professional transfer to Lyon Saint-Exupéry Airport (LYS). Guaranteed fixed price, punctual driver with sign with your name."}
+                    ? "Transfert professionnel vers l'aéroport Lyon Saint-Exupéry (LYS). Tarif au compteur réglementé, chauffeur ponctuel avec pancarte à votre nom."
+                    : "Professional transfer to Lyon Saint-Exupéry Airport (LYS). Regulated metered rate, punctual driver with sign with your name."}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -241,7 +241,7 @@ const TaxiAeroportLyon = () => {
                     isFr ? "1 heure d'attente incluse gratuitement en cas de retard de vol" : "1 hour of waiting time included free in case of flight delay",
                     isFr ? "Suivi de votre vol en temps réel pour ajuster l'heure de prise en charge" : "Real-time flight tracking to adjust pickup time",
                     isFr ? "Véhicules spacieux pour vos bagages (2 valises + 2 bagages cabine inclus)" : "Spacious vehicles for your luggage (2 suitcases + 2 cabin bags included)",
-                    isFr ? "Prix fixe garanti - pas de compteur, pas de mauvaise surprise" : "Guaranteed fixed price - no meter, no bad surprises",
+                    isFr ? "Tarif au compteur réglementé - prix transparent dans la fourchette indiquée" : "Regulated metered rate - transparent pricing within the indicated range",
                     isFr ? "Sièges bébé et rehausseurs disponibles sur demande (gratuit)" : "Baby seats and booster seats available on request (free)"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3 p-4 bg-background rounded-lg shadow-sm">
