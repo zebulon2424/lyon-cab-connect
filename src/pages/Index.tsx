@@ -4,6 +4,8 @@ import BookingForm from '@/components/BookingForm';
 import Services from '@/components/Services';
 import FareSimulator from '@/components/FareSimulator';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LiveChat from '@/components/LiveChat';
@@ -19,6 +21,8 @@ const Index = () => {
         <Services />
         <FareSimulator />
         <WhyChooseUs />
+        <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
