@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Plane, Briefcase, Train, PartyPopper, Clock, Heart } from 'lucide-react';
+import serviceAirport from '@/assets/service-airport.jpg';
+import serviceGare from '@/assets/service-gare.jpg';
+import serviceBusiness from '@/assets/service-business.jpg';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -10,16 +13,19 @@ const Services = () => {
       icon: Plane,
       title: t('services.airport.title'),
       description: t('services.airport.description'),
+      image: serviceAirport,
     },
     {
       icon: Briefcase,
       title: t('services.business.title'),
       description: t('services.business.description'),
+      image: serviceBusiness,
     },
     {
       icon: Train,
       title: t('services.station.title'),
       description: t('services.station.description'),
+      image: serviceGare,
     },
     {
       icon: PartyPopper,
@@ -82,17 +88,29 @@ const Services = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group glass rounded-2xl p-6 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+              className="group glass rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+              {service.image && (
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground">
-                {service.description}
-              </p>
             </motion.div>
           ))}
         </motion.div>
