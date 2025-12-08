@@ -62,6 +62,16 @@ const Footer = () => {
         </svg>
       ),
     },
+    { 
+      name: 'Avis Vérifiés', 
+      href: '#', // Replace with your Avis Vérifiés URL
+      logo: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" fill="#00B67A"/>
+          <path d="M12 6l1.5 3.5L17 10l-2.5 2.5.5 4-3-1.5-3 1.5.5-4L7 10l3.5-.5L12 6z" fill="white"/>
+        </svg>
+      ),
+    },
   ];
 
   return (
