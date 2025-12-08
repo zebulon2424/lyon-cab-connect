@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Shield, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import LazyImage from '@/components/LazyImage';
 import heroImage from '@/assets/hero-taxi-lyon.jpg';
 
 const Hero = () => {
@@ -101,14 +102,12 @@ const Hero = () => {
               
               {/* Card with image */}
               <div className="relative glass rounded-3xl p-4 border border-border/50">
-                <div className="aspect-[16/10] rounded-2xl overflow-hidden">
-                  <img 
-                    src={heroImage} 
-                    alt="Taxi premium à Lyon" 
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                  />
-                </div>
+                <LazyImage 
+                  src={heroImage} 
+                  alt="Taxi premium à Lyon" 
+                  className="aspect-[16/10] rounded-2xl"
+                  priority={true}
+                />
                 
                 {/* Floating elements */}
                 <motion.div
