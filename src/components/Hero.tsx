@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Shield, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroImage from '@/assets/hero-taxi-lyon.jpg';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -98,16 +99,15 @@ const Hero = () => {
               {/* Glow effect */}
               <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl transform scale-90" />
               
-              {/* Card */}
-              <div className="relative glass rounded-3xl p-8 border border-border/50">
-                <div className="aspect-square bg-gradient-dark rounded-2xl flex items-center justify-center overflow-hidden">
-                  {/* Stylized taxi icon */}
-                  <div className="relative">
-                    <div className="w-48 h-32 bg-primary rounded-2xl transform -rotate-6" />
-                    <div className="absolute top-2 left-4 w-40 h-20 bg-primary-foreground/20 rounded-xl" />
-                    <div className="absolute -bottom-4 left-4 w-12 h-12 bg-foreground rounded-full border-4 border-secondary" />
-                    <div className="absolute -bottom-4 right-4 w-12 h-12 bg-foreground rounded-full border-4 border-secondary" />
-                  </div>
+              {/* Card with image */}
+              <div className="relative glass rounded-3xl p-4 border border-border/50">
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden">
+                  <img 
+                    src={heroImage} 
+                    alt="Taxi premium à Lyon" 
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
                 </div>
                 
                 {/* Floating elements */}
