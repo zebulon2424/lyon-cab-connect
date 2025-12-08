@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { MapPin } from 'lucide-react';
-import { useGoogleMaps } from '@/components/GoogleMapsProvider';
 
 interface AddressAutocompleteProps {
   value: string;
@@ -20,24 +19,28 @@ const AddressAutocomplete = ({
 }: AddressAutocompleteProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
-  const [mapsReady, setMapsReady] = useState(false);
-  const { isLoaded, loadGoogleMaps } = useGoogleMaps();
-
-  // Load Google Maps on focus (lazy loading)
-  const handleFocus = () => {
-    if (!isLoaded) {
-      loadGoogleMaps();
-    }
-  };
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (isLoaded && window.google?.maps?.places) {
-      setMapsReady(true);
+    // Check if Google Maps is already loaded
+    if (window.google?.maps?.places) {
+      setIsLoaded(true);
+      return;
     }
-  }, [isLoaded]);
+
+    // Wait for Google Maps to load
+    const checkLoaded = setInterval(() => {
+      if (window.google?.maps?.places) {
+        setIsLoaded(true);
+        clearInterval(checkLoaded);
+      }
+    }, 100);
+
+    return () => clearInterval(checkLoaded);
+  }, []);
 
   useEffect(() => {
-    if (!mapsReady || !inputRef.current || autocompleteRef.current) return;
+    if (!isLoaded || !inputRef.current || autocompleteRef.current) return;
 
     autocompleteRef.current = new google.maps.places.Autocomplete(inputRef.current, {
       componentRestrictions: { country: 'fr' },
@@ -51,7 +54,7 @@ const AddressAutocomplete = ({
         onChange(place.formatted_address, place.place_id);
       }
     });
-  }, [mapsReady, onChange]);
+  }, [isLoaded, onChange]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
@@ -64,7 +67,6 @@ const AddressAutocomplete = ({
         name={name}
         value={value}
         onChange={handleInputChange}
-        onFocus={handleFocus}
         placeholder={placeholder}
         required={required}
         className="pl-10"
