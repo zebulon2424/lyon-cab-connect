@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Plane, Briefcase, Train, PartyPopper, Clock, Heart } from 'lucide-react';
+import LazyImage from '@/components/LazyImage';
 import serviceAirport from '@/assets/service-airport.jpg';
 import serviceGare from '@/assets/service-gare.jpg';
 import serviceBusiness from '@/assets/service-business.jpg';
@@ -91,14 +92,11 @@ const Services = () => {
               className="group glass rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
             >
               {service.image && (
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
+                <LazyImage 
+                  src={service.image} 
+                  alt={service.title}
+                  className="aspect-[4/3] group-hover:scale-105 transition-transform duration-500"
+                />
               )}
               <div className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">

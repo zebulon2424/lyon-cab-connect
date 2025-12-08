@@ -1,57 +1,72 @@
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState, ReactNode, createContext, useContext } from 'react';
 
 interface GoogleMapsProviderProps {
   children: ReactNode;
 }
+
+interface GoogleMapsContextType {
+  isLoaded: boolean;
+  loadGoogleMaps: () => void;
+}
+
+const GoogleMapsContext = createContext<GoogleMapsContextType>({
+  isLoaded: false,
+  loadGoogleMaps: () => {},
+});
+
+export const useGoogleMaps = () => useContext(GoogleMapsContext);
 
 // API key is public and restricted by domain in Google Cloud Console
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCsX1Du28X5cMYrPY0hhlw1mhNtFovhYnQ';
 
 const GoogleMapsProvider = ({ children }: GoogleMapsProviderProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    console.log('[GoogleMaps] API Key present:', !!GOOGLE_MAPS_API_KEY);
-    console.log('[GoogleMaps] API Key length:', GOOGLE_MAPS_API_KEY.length);
+  const loadGoogleMaps = () => {
+    if (isLoaded || isLoading) return;
     
     if (window.google?.maps) {
-      console.log('[GoogleMaps] Already loaded');
       setIsLoaded(true);
-      return;
-    }
-
-    if (!GOOGLE_MAPS_API_KEY) {
-      console.error('[GoogleMaps] API key not configured - VITE_GOOGLE_MAPS_API_KEY is empty');
       return;
     }
 
     // Check if script is already being loaded
     const existingScript = document.querySelector('script[src*="maps.googleapis.com"]');
     if (existingScript) {
-      console.log('[GoogleMaps] Script already exists, waiting for load');
       existingScript.addEventListener('load', () => setIsLoaded(true));
       return;
     }
 
-    console.log('[GoogleMaps] Loading script...');
+    if (!GOOGLE_MAPS_API_KEY) {
+      console.error('[GoogleMaps] API key not configured');
+      return;
+    }
+
+    setIsLoading(true);
+    
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places&loading=async`;
     script.async = true;
     script.defer = true;
     script.onload = () => {
       console.log('[GoogleMaps] Script loaded successfully');
       setIsLoaded(true);
+      setIsLoading(false);
     };
-    script.onerror = (e) => console.error('[GoogleMaps] Failed to load script:', e);
+    script.onerror = (e) => {
+      console.error('[GoogleMaps] Failed to load script:', e);
+      setIsLoading(false);
+    };
     
     document.head.appendChild(script);
+  };
 
-    return () => {
-      // Don't remove the script on unmount as it might be used elsewhere
-    };
-  }, []);
-
-  return <>{children}</>;
+  return (
+    <GoogleMapsContext.Provider value={{ isLoaded, loadGoogleMaps }}>
+      {children}
+    </GoogleMapsContext.Provider>
+  );
 };
 
 export default GoogleMapsProvider;
