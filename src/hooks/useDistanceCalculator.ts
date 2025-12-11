@@ -1,12 +1,12 @@
 import { useState, useCallback } from 'react';
 
-// Tarifs officiels Lyon 2024 (Arrêté préfectoral n°69-2024-02-15-00001)
+// Tarifs officiels 2025 (Arrêté du 20 janvier 2025 - JORF n°0027 du 1er février 2025)
 const TARIFS = {
-  priseEnCharge: 3.00,
-  tarifA: 0.98,  // Jour (7h-19h) avec retour client
-  tarifB: 1.47,  // Nuit (19h-7h) et dimanche/fériés avec retour client
-  minimum: 8.00,
-  supplementPassager: 4.00, // À partir du 5ème passager
+  priseEnCharge: 4.48,    // Prise en charge max 2025
+  tarifA: 1.12,           // Jour (7h-19h) avec retour client
+  tarifB: 1.29,           // Nuit (19h-7h) et dimanche/fériés - tarif max 2025
+  minimum: 8.00,          // Minimum inchangé
+  supplementPassager: 5.50, // À partir du 5ème passager
 };
 
 interface FareEstimate {
