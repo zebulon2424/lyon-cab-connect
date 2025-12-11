@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 import AddressAutocomplete from './AddressAutocomplete';
 import { useDistanceCalculator } from '@/hooks/useDistanceCalculator';
+import { supabase } from '@/integrations/supabase/client';
 
 type VehicleType = 'sedan' | 'minivan' | 'bus' | 'tpmr' | 'vsl';
 type WheelchairType = 'foldable' | 'ramp';
@@ -16,6 +17,7 @@ const BookingForm = () => {
   const { t, i18n } = useTranslation();
   const isFr = i18n.language === 'fr';
   const { estimate, isCalculating, calculateFare, clearEstimate } = useDistanceCalculator();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const [formData, setFormData] = useState({
     pickup: '',
@@ -46,16 +48,58 @@ const BookingForm = () => {
     }
   }, [formData.pickup, formData.destination, formData.passengers, calculateFare, clearEstimate]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (formData.vehicleType === 'bus') {
       toast.info(t('booking.busCallMessage'));
       return;
     }
+
+    setIsSubmitting(true);
     
-    toast.success(t('booking.successMessage'));
-    console.log('Booking data:', formData);
+    try {
+      const bookingData = {
+        ...formData,
+        estimatedPrice: estimate ? `${estimate.minPrice}€ - ${estimate.maxPrice}€` : undefined,
+      };
+
+      const { data, error } = await supabase.functions.invoke('send-booking', {
+        body: bookingData,
+      });
+
+      if (error) {
+        console.error('Error sending booking:', error);
+        toast.error(isFr ? 'Erreur lors de l\'envoi de la réservation' : 'Error sending booking');
+        return;
+      }
+
+      toast.success(t('booking.successMessage'));
+      
+      // Reset form
+      setFormData({
+        pickup: '',
+        destination: '',
+        date: '',
+        time: '',
+        passengers: '1',
+        luggage: '0',
+        vehicleType: 'sedan',
+        wheelchairType: 'foldable',
+        childSeat: 'none',
+        childAge: '',
+        payment: 'online',
+        name: '',
+        phone: '',
+        email: '',
+      });
+      clearEstimate();
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error(isFr ? 'Erreur lors de l\'envoi de la réservation' : 'Error sending booking');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -523,8 +567,15 @@ const BookingForm = () => {
                   </a>
                 </div>
               ) : (
-                <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
-                  {t('booking.submit')}
+                <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      {isFr ? 'Envoi en cours...' : 'Sending...'}
+                    </>
+                  ) : (
+                    t('booking.submit')
+                  )}
                 </Button>
               )}
             </div>
