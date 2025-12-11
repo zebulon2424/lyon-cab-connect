@@ -20,6 +20,8 @@ const Footer = () => {
     { label: 'Taxi Gare Perrache', href: '/taxi-gare-perrache' },
     { label: 'Taxi Lyon Centre', href: '/taxi-lyon-centre' },
     { label: 'Taxi Villeurbanne', href: '/taxi-villeurbanne' },
+    { label: 'Taxi Lyon - Annecy', href: '/taxi-lyon-annecy' },
+    { label: 'Taxi Stations de Ski', href: '/taxi-lyon-stations-ski' },
     { label: 'VTC vs Taxi Lyon', href: '/vtc-taxi-lyon' },
   ];
 
