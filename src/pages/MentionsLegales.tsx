@@ -32,7 +32,7 @@ const MentionsLegales = () => {
               <p><strong>SIRET:</strong> 792 940 447</p>
               <p><strong>{isFr ? 'Numéro de TVA intracommunautaire' : 'VAT number'}:</strong> FR46792940447</p>
               <p><strong>{isFr ? 'Siège social' : 'Registered office'}:</strong> 254 rue Vendôme, 69003 Lyon, France</p>
-              <p><strong>{isFr ? 'Téléphone' : 'Phone'}:</strong> 04 78 00 00 00</p>
+              <p><strong>{isFr ? 'Téléphone' : 'Phone'}:</strong> 04 87 38 20 65</p>
               <p><strong>Email:</strong> contact@taxilyon.cab</p>
               <p><strong>{isFr ? 'Directeur de la publication' : 'Publication director'}:</strong> contact@taxilyon.cab</p>
             </div>
