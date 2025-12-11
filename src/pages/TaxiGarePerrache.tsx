@@ -55,7 +55,7 @@ const TaxiGarePerrache = () => {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "Taxi Lyon Cab - Gare Perrache",
-    "description": isFr ? "Service de taxi professionnel depuis la Gare de Perrache Lyon. Disponible 24h/24, prix fixe sur réservation." : "Professional taxi service from Lyon Perrache Station. Available 24/7, fixed price on booking.",
+    "description": isFr ? "Service de taxi professionnel depuis la Gare de Perrache Lyon. Disponible 24h/24, tarif au compteur réglementé." : "Professional taxi service from Lyon Perrache Station. Available 24/7, regulated metered rate.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
@@ -87,8 +87,8 @@ const TaxiGarePerrache = () => {
     },
     {
       icon: CreditCard,
-      title: isFr ? "Prix fixe" : "Fixed price",
-      description: isFr ? "Tarif garanti sans surprise" : "Guaranteed rate, no surprises"
+      title: isFr ? "Tarif réglementé" : "Regulated rate",
+      description: isFr ? "Prix au compteur transparent" : "Transparent metered pricing"
     },
     {
       icon: Car,
@@ -101,7 +101,7 @@ const TaxiGarePerrache = () => {
     <>
       <Helmet>
         <title>{isFr ? "Taxi Gare Perrache Lyon | Réservation 24h/24 | Dès 10€" : "Lyon Perrache Station Taxi | 24/7 Booking | From €10"}</title>
-        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare de Perrache Lyon. Service 24h/24, prix fixe dès 10€. Transfert aéroport 65€. ☎ 04 87 38 20 65" : "Book your taxi at Lyon Perrache Station. 24/7 service, fixed price from €10. Airport transfer €65. ☎ +33 4 87 38 20 65"} />
+        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare de Perrache Lyon. Service 24h/24, dès 10€. Transfert aéroport 65€. ☎ 04 87 38 20 65" : "Book your taxi at Lyon Perrache Station. 24/7 service, from €10. Airport transfer €65. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "taxi gare perrache, taxi lyon perrache, réserver taxi perrache, taxi gare lyon, transfert perrache aéroport" : "taxi perrache station, lyon perrache taxi, book taxi perrache, perrache airport transfer"} />
         <link rel="canonical" href="https://taxilyon.cab/taxi-gare-perrache" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -180,8 +180,8 @@ const TaxiGarePerrache = () => {
               </h2>
               <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
                 {isFr 
-                  ? "La gare Perrache est idéalement située au cœur de Lyon. Tarifs fixes garantis sur réservation."
-                  : "Perrache Station is ideally located in the heart of Lyon. Fixed rates guaranteed on booking."}
+                  ? "La gare Perrache est idéalement située au cœur de Lyon. Tarifs indicatifs au compteur réglementé."
+                  : "Perrache Station is ideally located in the heart of Lyon. Indicative rates, regulated metered pricing."}
               </p>
               
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">

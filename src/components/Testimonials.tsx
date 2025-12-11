@@ -21,8 +21,8 @@ const Testimonials = () => {
       role: isFr ? 'Homme d\'affaires' : 'Business executive',
       rating: 5,
       text: isFr 
-        ? "Taxi Lyon Cab est mon choix pour tous mes déplacements professionnels. Véhicules propres, chauffeurs courtois et prix fixes."
-        : "Taxi Lyon Cab is my choice for all business travel. Clean vehicles, courteous drivers and fixed prices.",
+        ? "Taxi Lyon Cab est mon choix pour tous mes déplacements professionnels. Véhicules propres, chauffeurs courtois et tarifs transparents."
+        : "Taxi Lyon Cab is my choice for all business travel. Clean vehicles, courteous drivers and transparent pricing.",
       avatar: 'PD',
     },
     {

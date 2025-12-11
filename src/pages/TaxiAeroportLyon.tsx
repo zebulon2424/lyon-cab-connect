@@ -63,7 +63,7 @@ const TaxiAeroportLyon = () => {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "Taxi Lyon Cab - Transfert Aéroport Saint-Exupéry",
-    "description": isFr ? "Service de taxi professionnel pour transferts Lyon - Aéroport Saint-Exupéry. Prix fixe 59€, disponible 24h/24." : "Professional taxi service for Lyon - Saint-Exupéry Airport transfers. Fixed price €59, available 24/7.",
+    "description": isFr ? "Service de taxi professionnel pour transferts Lyon - Aéroport Saint-Exupéry. À partir de 59€, disponible 24h/24." : "Professional taxi service for Lyon - Saint-Exupéry Airport transfers. From €59, available 24/7.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
@@ -114,8 +114,8 @@ const TaxiAeroportLyon = () => {
   return (
     <>
       <Helmet>
-        <title>{isFr ? "Taxi Aéroport Lyon Saint-Exupéry | Transfert 59€ Prix Fixe | Taxi Lyon Cab" : "Lyon Airport Taxi Saint-Exupéry | Transfer €59 Fixed Price | Taxi Lyon Cab"}</title>
-        <meta name="description" content={isFr ? "Réservez votre taxi Lyon - Aéroport Saint-Exupéry. Prix fixe 59€, disponible 24h/24, chauffeur avec pancarte. Transfert rapide en 25-35 min. ☎ 04 87 38 20 65" : "Book your Lyon - Saint-Exupéry Airport taxi. Fixed price €59, available 24/7, driver with sign. Fast transfer in 25-35 min. ☎ +33 4 87 38 20 65"} />
+        <title>{isFr ? "Taxi Aéroport Lyon Saint-Exupéry | Transfert dès 59€ | Taxi Lyon Cab" : "Lyon Airport Taxi Saint-Exupéry | Transfer from €59 | Taxi Lyon Cab"}</title>
+        <meta name="description" content={isFr ? "Réservez votre taxi Lyon - Aéroport Saint-Exupéry. À partir de 59€, disponible 24h/24, chauffeur avec pancarte. Transfert rapide en 25-35 min. ☎ 04 87 38 20 65" : "Book your Lyon - Saint-Exupéry Airport taxi. From €59, available 24/7, driver with sign. Fast transfer in 25-35 min. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "taxi aéroport lyon, taxi saint exupéry, transfert aéroport lyon, navette taxi lyon, taxi LYS, prix taxi aéroport lyon" : "lyon airport taxi, saint exupery taxi, lyon airport transfer, taxi LYS, airport taxi price lyon"} />
         <link rel="canonical" href="https://taxilyon.cab/taxi-aeroport-lyon-saint-exupery" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -162,7 +162,6 @@ const TaxiAeroportLyon = () => {
                 <div className="inline-flex items-center gap-2 text-2xl font-bold text-primary">
                   <span>{isFr ? "À partir de" : "From"}</span>
                   <span className="text-4xl">59€</span>
-                  <span className="text-muted-foreground text-lg font-normal">{isFr ? "(prix fixe)" : "(fixed price)"}</span>
                 </div>
               </div>
             </div>
