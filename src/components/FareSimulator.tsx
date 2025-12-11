@@ -5,16 +5,16 @@ import { Calculator, Info, Sun, Moon, MapPin } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-// Tarifs officiels Lyon 2024 (Arrêté préfectoral n°69-2024-02-15-00001)
+// Tarifs officiels Lyon 2025 (Arrêté du 20 janvier 2025 - JORF n°0027 du 1er février 2025)
 const TARIFS = {
-  priseEnCharge: 3.00,
-  tarifA: 0.98,  // Jour (7h-19h) avec retour client
-  tarifB: 1.47,  // Nuit (19h-7h) et dimanche/fériés avec retour client
-  tarifC: 1.96,  // Jour sans retour client
-  tarifD: 2.94,  // Nuit sans retour client
-  minimum: 8.00,
-  supplementPassager: 4.00, // À partir du 5ème passager
-  heureAttente: 39.47,
+  priseEnCharge: 4.48,    // Prise en charge max 2025
+  tarifA: 1.12,           // Jour (7h-19h) avec retour client
+  tarifB: 1.29,           // Nuit (19h-7h) et dimanche/fériés - tarif max 2025
+  tarifC: 2.24,           // Jour sans retour client
+  tarifD: 2.58,           // Nuit sans retour client
+  minimum: 8.00,          // Minimum inchangé
+  supplementPassager: 5.50, // À partir du 5ème passager
+  heureAttente: 41.76,    // Prix horaire max 2025
 };
 
 // Distances approximatives depuis le centre de Lyon
@@ -80,7 +80,7 @@ const FareSimulator = () => {
                   {isFr ? 'Simulateur de tarif' : 'Fare Simulator'}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {isFr ? 'Estimation basée sur les tarifs officiels Lyon 2024' : 'Estimate based on official Lyon 2024 rates'}
+                  {isFr ? 'Estimation basée sur les tarifs officiels 2025' : 'Estimate based on official 2025 rates'}
                 </p>
               </div>
             </div>
@@ -236,8 +236,8 @@ const FareSimulator = () => {
               <Info className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
               <p>
                 {isFr 
-                  ? 'Tarifs indicatifs basés sur l\'arrêté préfectoral n°69-2024-02-15-00001. Le tarif réel peut varier selon le trafic, les détours et le trajet exact.'
-                  : 'Indicative rates based on prefectural decree n°69-2024-02-15-00001. Actual fare may vary based on traffic, detours, and exact route.'
+                  ? 'Tarifs indicatifs basés sur l\'arrêté du 20 janvier 2025 (JORF du 1er février 2025). Le tarif réel peut varier selon le trafic, les détours et le trajet exact.'
+                  : 'Indicative rates based on the decree of January 20, 2025 (Official Journal Feb 1, 2025). Actual fare may vary based on traffic, detours, and exact route.'
                 }
               </p>
             </div>
