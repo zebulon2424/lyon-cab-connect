@@ -17,6 +17,8 @@ import TaxiGarePerrache from "./pages/TaxiGarePerrache";
 import TaxiLyonCentre from "./pages/TaxiLyonCentre";
 import TaxiVilleurbanne from "./pages/TaxiVilleurbanne";
 import VTCTaxiLyon from "./pages/VTCTaxiLyon";
+import TaxiLyonAnnecy from "./pages/TaxiLyonAnnecy";
+import TaxiStationsSki from "./pages/TaxiStationsSki";
 import '@/lib/i18n';
 
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const App = () => (
             <Route path="/taxi-lyon-centre" element={<TaxiLyonCentre />} />
             <Route path="/taxi-villeurbanne" element={<TaxiVilleurbanne />} />
             <Route path="/vtc-taxi-lyon" element={<VTCTaxiLyon />} />
+            <Route path="/taxi-lyon-annecy" element={<TaxiLyonAnnecy />} />
+            <Route path="/taxi-lyon-stations-ski" element={<TaxiStationsSki />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
             <Route path="/cgv" element={<CGV />} />
