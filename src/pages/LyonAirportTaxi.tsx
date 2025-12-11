@@ -17,7 +17,7 @@ const LyonAirportTaxi = () => {
         "name": "How much is a taxi from Lyon Airport to city center?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A taxi from Lyon Saint-Exupéry Airport (LYS) to Lyon city center costs €59 during the day and €75 at night (7pm-7am). This is a fixed price with no hidden fees."
+          "text": "A taxi from Lyon Saint-Exupéry Airport (LYS) to Lyon city center costs around €59 during the day and €75 at night (7pm-7am). Regulated metered rate, transparent pricing."
         }
       },
       {
@@ -67,7 +67,7 @@ const LyonAirportTaxi = () => {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "Taxi Lyon Cab - Lyon Airport Transfer",
-    "description": "Professional English-speaking taxi service for Lyon Saint-Exupéry Airport (LYS) transfers. Fixed price €59, available 24/7.",
+    "description": "Professional English-speaking taxi service for Lyon Saint-Exupéry Airport (LYS) transfers. From €59, available 24/7.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
@@ -93,8 +93,8 @@ const LyonAirportTaxi = () => {
     },
     {
       icon: CreditCard,
-      title: "Fixed Price €59",
-      description: "No meter, no hidden fees - pay what we quote"
+      title: "From €59",
+      description: "Regulated metered rate, transparent pricing"
     },
     {
       icon: Users,
@@ -140,12 +140,12 @@ const LyonAirportTaxi = () => {
   return (
     <>
       <Helmet>
-        <title>Lyon Airport Taxi | Saint-Exupéry Transfer €59 Fixed Price | English Speaking Drivers</title>
-        <meta name="description" content="Book your Lyon Airport taxi online. Fixed price €59 to city center, English-speaking drivers, meet & greet service. Available 24/7. Call +33 4 87 38 20 65" />
+        <title>Lyon Airport Taxi | Saint-Exupéry Transfer from €59 | English Speaking Drivers</title>
+        <meta name="description" content="Book your Lyon Airport taxi online. From €59 to city center, English-speaking drivers, meet & greet service. Available 24/7. Call +33 4 87 38 20 65" />
         <meta name="keywords" content="lyon airport taxi, saint exupery airport taxi, LYS taxi, lyon airport transfer, taxi from lyon airport, english speaking taxi lyon, airport shuttle lyon" />
         <link rel="canonical" href="https://taxilyon.cab/lyon-airport-taxi" />
-        <meta property="og:title" content="Lyon Airport Taxi | €59 Fixed Price Transfer | Taxi Lyon Cab" />
-        <meta property="og:description" content="Professional taxi service from Lyon Saint-Exupéry Airport. Fixed price €59, English-speaking drivers, 24/7 availability." />
+        <meta property="og:title" content="Lyon Airport Taxi | Transfer from €59 | Taxi Lyon Cab" />
+        <meta property="og:description" content="Professional taxi service from Lyon Saint-Exupéry Airport. From €59, English-speaking drivers, 24/7 availability." />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_GB" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -191,7 +191,6 @@ const LyonAirportTaxi = () => {
                 <div className="inline-flex items-center gap-2 text-2xl font-bold text-primary">
                   <span>From only</span>
                   <span className="text-4xl">€59</span>
-                  <span className="text-muted-foreground text-lg font-normal">(fixed price)</span>
                 </div>
               </div>
             </div>
@@ -223,7 +222,7 @@ const LyonAirportTaxi = () => {
                 Lyon Airport Taxi Prices
               </h2>
               <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                All prices are fixed and include meet & greet, 1 hour waiting time, and luggage assistance.
+                Indicative prices include meet & greet, 1 hour waiting time, and luggage assistance.
               </p>
               
               <div className="max-w-4xl mx-auto overflow-x-auto">

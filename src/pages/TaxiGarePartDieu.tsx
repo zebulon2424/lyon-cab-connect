@@ -55,7 +55,7 @@ const TaxiGarePartDieu = () => {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     "name": "Taxi Lyon Cab - Gare Part-Dieu",
-    "description": isFr ? "Service de taxi professionnel depuis la Gare Lyon Part-Dieu. Disponible 24h/24, prix fixe sur réservation." : "Professional taxi service from Lyon Part-Dieu Station. Available 24/7, fixed price on booking.",
+    "description": isFr ? "Service de taxi professionnel depuis la Gare Lyon Part-Dieu. Disponible 24h/24, tarif au compteur réglementé." : "Professional taxi service from Lyon Part-Dieu Station. Available 24/7, regulated metered rate.",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Taxi Lyon Cab",
@@ -91,8 +91,8 @@ const TaxiGarePartDieu = () => {
     },
     {
       icon: CreditCard,
-      title: isFr ? "Prix fixe" : "Fixed price",
-      description: isFr ? "Tarif garanti sur réservation" : "Guaranteed rate on booking"
+      title: isFr ? "Tarif réglementé" : "Regulated rate",
+      description: isFr ? "Prix au compteur transparent" : "Transparent metered pricing"
     },
     {
       icon: Users,
@@ -105,7 +105,7 @@ const TaxiGarePartDieu = () => {
     <>
       <Helmet>
         <title>{isFr ? "Taxi Gare Part-Dieu Lyon | Réservation 24h/24 | À partir de 12€" : "Lyon Part-Dieu Station Taxi | 24/7 Booking | From €12"}</title>
-        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare Part-Dieu Lyon. Service 24h/24, prix fixe à partir de 12€. Transfert aéroport 55€. ☎ 04 87 38 20 65" : "Book your taxi at Lyon Part-Dieu Station. 24/7 service, fixed price from €12. Airport transfer €55. ☎ +33 4 87 38 20 65"} />
+        <meta name="description" content={isFr ? "Réservez votre taxi à la Gare Part-Dieu Lyon. Service 24h/24, à partir de 12€. Transfert aéroport 55€. ☎ 04 87 38 20 65" : "Book your taxi at Lyon Part-Dieu Station. 24/7 service, from €12. Airport transfer €55. ☎ +33 4 87 38 20 65"} />
         <meta name="keywords" content={isFr ? "taxi gare part dieu, taxi lyon part dieu, réserver taxi part dieu, taxi gare lyon, transfert part dieu aéroport" : "taxi part dieu station, lyon part dieu taxi, book taxi part dieu, lyon station taxi, part dieu airport transfer"} />
         <link rel="canonical" href="https://taxilyon.cab/taxi-gare-part-dieu" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
