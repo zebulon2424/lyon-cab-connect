@@ -15,6 +15,7 @@ import LyonAirportTaxi from "./pages/LyonAirportTaxi";
 import TaxiGarePartDieu from "./pages/TaxiGarePartDieu";
 import TaxiGarePerrache from "./pages/TaxiGarePerrache";
 import TaxiLyonCentre from "./pages/TaxiLyonCentre";
+import TaxiVilleurbanne from "./pages/TaxiVilleurbanne";
 import VTCTaxiLyon from "./pages/VTCTaxiLyon";
 import '@/lib/i18n';
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/taxi-gare-part-dieu" element={<TaxiGarePartDieu />} />
             <Route path="/taxi-gare-perrache" element={<TaxiGarePerrache />} />
             <Route path="/taxi-lyon-centre" element={<TaxiLyonCentre />} />
+            <Route path="/taxi-villeurbanne" element={<TaxiVilleurbanne />} />
             <Route path="/vtc-taxi-lyon" element={<VTCTaxiLyon />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />

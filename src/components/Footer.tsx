@@ -19,6 +19,7 @@ const Footer = () => {
     { label: 'Taxi Gare Part-Dieu', href: '/taxi-gare-part-dieu' },
     { label: 'Taxi Gare Perrache', href: '/taxi-gare-perrache' },
     { label: 'Taxi Lyon Centre', href: '/taxi-lyon-centre' },
+    { label: 'Taxi Villeurbanne', href: '/taxi-villeurbanne' },
     { label: 'VTC vs Taxi Lyon', href: '/vtc-taxi-lyon' },
   ];
 
