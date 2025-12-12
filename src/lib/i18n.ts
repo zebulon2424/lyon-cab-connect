@@ -141,8 +141,8 @@ const resources = {
           description: "Conducteurs expérimentés, véhicules récents et bien entretenus.",
         },
         fixed: {
-          title: "Prix fixes",
-          description: "Tarifs communiqués à l'avance, sans mauvaise surprise.",
+          title: "Fourchette de prix",
+          description: "Estimation tarifaire communiquée à l'avance pour planifier votre budget.",
         },
         payment: {
           title: "Paiement flexible",
@@ -329,8 +329,8 @@ const resources = {
           description: "Professional, courteous drivers who speak English. Clean, modern vehicles.",
         },
         fixed: {
-          title: "Fixed Price Guarantee",
-          description: "Price quoted is price paid. No meter, no surprises, no hidden charges.",
+          title: "Price Range Estimate",
+          description: "Get an upfront fare estimate to plan your budget before booking.",
         },
         payment: {
           title: "Easy Payment Options",
